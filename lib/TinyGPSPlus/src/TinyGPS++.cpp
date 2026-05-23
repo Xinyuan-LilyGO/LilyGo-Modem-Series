@@ -477,7 +477,8 @@ void TinyGPSCustom::begin(TinyGPSPlus &gps, const char *_sentenceName, int _term
 
 void TinyGPSCustom::commit()
 {
-   strcpy(this->buffer, this->stagingBuffer);
+   strncpy(this->buffer, this->stagingBuffer, sizeof(this->buffer));
+   this->buffer[sizeof(this->buffer) - 1] = '\0';
    lastCommitTime = millis();
    valid = updated = true;
 }
