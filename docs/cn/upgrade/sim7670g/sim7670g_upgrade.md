@@ -39,7 +39,8 @@
 - [🟡2374B04SIM767XM5A](https://drive.google.com/file/d/1-akwKQJttLbtLD48ApagusfBvS9ixZ4F/view?usp=sharing)
 - [🟢稳定版:2374B05V01SIM767XM5A](https://drive.google.com/file/d/10VvMNzgKhAX25lHSIGHnD3ip7kWjFl0g/view?usp=sharing) <!-- 20241206 Fixed MQTTS error https://github.com/Xinyuan-LilyGO/LilyGO-T-A76XX/issues/183 , HTTPS MQTTS FIXED -->
 - [🔴2388B03SIM767XM5A 不推荐使用；存在很多问题。](https://drive.google.com/file/d/1_Gwj3v_6NCtC-6xQ8dGSrjayTFRJyVgu/view?usp=sharing)
-- [🟣最新:2388B04SIM767XM5A_M_SIM7670G-MNGV_V202250121](https://drive.google.com/file/d/1VCdWaWFyk2PfM0WGyceXML_7lgFYbyWe/view?usp=sharing)
+- [🟡:2388B04SIM767XM5A_M_SIM7670G-MNGV_V202250121](https://drive.google.com/file/d/1VCdWaWFyk2PfM0WGyceXML_7lgFYbyWe/view?usp=sharing)
+- [🟣最新:2397B01SIM767XM5A_M_SIM7670G-MNGV_V202260204](https://drive.google.com/file/d/149J1sh5L-iGmuGjyTjAG6a75QdGARiro/view?usp=sharing)
 
 > \[!IMPORTANT]
 >
