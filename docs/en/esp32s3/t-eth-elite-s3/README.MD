@@ -120,6 +120,75 @@
 > IO0/IO3/IO45/IO46 are Strapping Pins; their use is limited. Please see the **Strapping Pins** section of the [online documentation](https://documentation.espressif.com/esp32-s3_datasheet_en.pdf) for details.
 >
 
+### DIP Switch
+
+<img  height="480" width="480" src=../../../../images/product/png/H744-02-T-ETH-Elite-LTE.png>
+
+#### Route map
+
+<img  src=DIPSwitch.png>
+
+
+#### Uart DIP switch
+
+<img  height="480" width="480" src=UARTDIP.png>
+
+| Label | Note                   | Note                                            |
+| ----- | ---------------------- | ----------------------------------------------- |
+| LPSET | SX1302 reset           | Switch to OFF for serial communication          |
+| PPS   | Modem PPS              | GPS PPS                                         |
+| PWR   | Modem Power            | Switch to ON for serial communication           |
+| SCLK  | SX1302 SCK             | Switch to OFF for serial communication          |
+| MISO  | SX1302 MISO            | Switch to OFF for serial communication          |
+| MOSI  | SX1302 MOSI            | Switch to OFF for serial communication          |
+| CS    | SX1302 CS              | Switch to OFF for serial communication          |
+| OE    | Level converter enable | Switch to ON for serial communication           |
+| CTS   | Modem CTS              | Switch to ON for serial communication(Optional) |
+| RTS   | Modem RTS              | Switch to ON for serial communication(Optional) |
+| TX    | Modem TX               | Switch to ON for serial communication           |
+| RX    | Modem RX               | Switch to ON for serial communication           |
+| RESET | Modem reset            | Switch to ON for serial communication(Optional) |
+| RI    | Modem ring             | Switch to ON for serial communication(Optional) |
+| DTR   | Modem DTR              | Switch to ON for serial communication(Optional) |
+
+* PWR: This only applies to the LILYGO PCIE LET module; the official SIMCOM module does not require it.
+* **LPSET**,**SCLK**,**MOSI**,**CS**,**MISO**,The switch is only turned ON when using the SX1302 LoRaWAN module; the SX1302 and 4G LTE are mutually exclusive.
+* For ESP32 UART communication, the following pins must be connected: RX, TX, and PWR.
+
+#### GPS DIP switch
+
+<img  height="480" width="480" src=UARTDIP.png>
+
+| GPS SW | Note |
+| ------ | ---- |
+| GPS TX |      |
+| GPS RX |      |
+
+* To route from the L76K GPS module to the ESP32, the GPS switch needs to be turned ON.
+
+#### USB DIP switch
+
+<img  height="480" width="480" src=USBDIP.png>
+
+
+| USB Switch | Note         |
+| ---------- | ------------ |
+| DP+        | Modem USB DP |
+| DP-        | Modem USB DN |
+
+* If you need to route the modem's USB to the ESP32 USB, you need to switch the USB switch to ON. At this time, the ESP32 USB and the modem's USB are connected together. Note that you should not use the ELte motherboard's USB-C port at this time.
+
+#### Voltage DIP switch
+
+<img  height="480" width="480" src=VOLTAGEDIP.png>
+
+| Power Switch | 说明        |
+| ------------ | ----------- |
+| 3.3V         | LilyGO PCIE |
+| 4.2V         | SimCom PCIE |
+
+* The factory default voltage setting is 4.2V for LilyGo PCIe compatibility. If you are using a SIMCOM official PCIe adapter, you need to switch the 4.2V switch to OFF and the 3.3V switch to ON.
+
 ### ⚡ Electrical parameters
 
 | Features             | Details                     |
