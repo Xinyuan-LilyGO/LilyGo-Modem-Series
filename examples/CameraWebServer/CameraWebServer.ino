@@ -71,7 +71,7 @@ bool setCameraPower(bool enable)
     Wire.beginTransmission(0x28);
     Wire.write(control, sizeof(control) / sizeof(control[0]));
     Wire.endTransmission();
-    
+
     if (enable) {
         /*
         * Maximize the use of GPIO. No GPIO is assigned to the camera reset pin, so the camera is reset by powering on again.
@@ -221,6 +221,57 @@ void setup()
     if (config.pixel_format == PIXFORMAT_JPEG) {
         s->set_framesize(s, FRAMESIZE_QVGA);
     }
+
+
+    Serial.print("Camera Model:");
+    switch (s->id.PID) {
+    case OV9650_PID :
+        Serial.println("OV9650");
+        break;
+    case OV7725_PID  :
+        Serial.println("OV7725");
+        break;
+    case OV2640_PID  :
+        Serial.println("OV2640");
+        break;
+    case OV3660_PID  :
+        Serial.println("OV3660");
+        break;
+    case OV5640_PID  :
+        Serial.println("OV5640");
+        break;
+    case OV7670_PID  :
+        Serial.println("OV7670");
+        break;
+    case NT99141_PID :
+        Serial.println("NT99141");
+        break;
+    case GC2145_PID  :
+        Serial.println("GC2145");
+        break;
+    case GC032A_PID  :
+        Serial.println("GC032A");
+        break;
+    case GC0308_PID  :
+        Serial.println("GC0308");
+        break;
+    case BF3005_PID  :
+        Serial.println("BF3005");
+        break;
+    case BF20A6_PID  :
+        Serial.println("BF20A6");
+        break;
+    case SC101IOT_PID:
+        Serial.println("SC101IOT");
+        break;
+    case SC030IOT_PID:
+        Serial.println("SC030IOT");
+        break;
+    case SC031GS_PID:
+        Serial.println("SC031GS");
+        break;
+    }
+
 
     // s->set_vflip(s, 1);
 
