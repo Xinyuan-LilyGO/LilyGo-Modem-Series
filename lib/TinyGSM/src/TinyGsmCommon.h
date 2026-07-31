@@ -32,12 +32,32 @@
 #define TINY_GSM_YIELD_MS 0
 #endif
 
+#if defined(ESP32)
+// Runtime PSRAM detection: checked once at first use, cached for subsequent calls.
+static inline bool tinygsm_has_psram() {
+    static const bool _psram = psramFound();
+    return _psram;
+}
+static inline void* tinygsm_malloc(size_t size) {
+    void* p = nullptr;
+    if (tinygsm_has_psram()) p = ps_malloc(size);
+    return p ? p : malloc(size);
+}
+static inline void* tinygsm_realloc(void* ptr, size_t size) {
+    if (tinygsm_has_psram()) return ps_realloc(ptr, size);
+    return realloc(ptr, size);
+}
+#define TINY_GSM_MALLOC  tinygsm_malloc
+#define TINY_GSM_REALLOC tinygsm_realloc
+#else
+// Non-ESP32: keep existing compile-time BOARD_HAS_PSRAM behaviour.
 #ifdef BOARD_HAS_PSRAM
 #define TINY_GSM_MALLOC       ps_malloc
 #define TINY_GSM_REALLOC      ps_realloc
 #else
 #define TINY_GSM_MALLOC       malloc
 #define TINY_GSM_REALLOC      realloc
+#endif
 #endif
 
 

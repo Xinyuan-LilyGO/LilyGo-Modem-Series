@@ -3,6 +3,87 @@
 ![TinyGSM logo](https://cdn.rawgit.com/vshymanskyy/TinyGSM/d18e93dc51fe988a0b175aac647185457ef640b5/extras/logo.svg)
 
 A small Arduino library for GSM modules, that just works.
+
+---
+
+## This fork
+
+**Fork chain:** `zatalian/TinyGSM` → [`lewisxhe/TinyGSM-fork`](https://github.com/lewisxhe/TinyGSM-fork) → [`vshymanskyy/TinyGSM`](https://github.com/vshymanskyy/TinyGSM)
+
+### What lewisxhe added (upstream of this fork)
+
+- Full support for **A7670, A7608** (ASR-based SIMCom LTE modems)
+- Full support for **SIM7672 / SIM7670G** (Qualcomm-based, `TinyGsmClientSIM7672.h`)
+- **TLS socket for A76xx** (`TinyGsmClientA76xxSSL.h`) via `+CCH` AT commands
+- MQTT over TLS (`TinyGsmMqttA76xx.h`), HTTPS (`TinyGsmHttpsComm.h`), GPS extensions, filesystem
+
+### What this fork adds
+
+#### 1. `GsmClientSecureSIM7672` — TLS socket for SIM7670G
+
+The A76xxSSL TLS socket (`+CCH` commands) was not wired for SIM7670G —
+`modemConnect` was plain-TCP-only and `GsmClientSecure` was a commented-out
+TODO stub. This fork adds a full implementation in `TinyGsmClientSIM7672.h`:
+
+```cpp
+// Usage
+TinyGsmClientSecure client(modem, 0);  // mux 0 or 1
+client.connect("example.com", 443, 30);
+client.print("GET / HTTP/1.0\r\nHost: example.com\r\n\r\n");
+while (client.available()) Serial.write(client.read());
+client.stop();
+```
+
+Uses `+CCHSTART` / `+CCHOPEN` / `+CCHSEND` / `+CCHRECV` / `+CCHCLOSE`.
+Supports per-mux SSL certificate configuration via `setCertificate()`,
+`setClientCertificate()`, `setClientPrivateKey()`.
+
+`TinyGsmClient.h` now exposes `TinyGsmClientSecure` for `TINY_GSM_MODEM_SIM7670G`.
+
+> **Status:** confirmed on hardware — T-SIM7670G-S3, firmware `SIM767XM5_B05V01_241206`.
+> All four TLS socket tests pass (example.com, ecc256.badssl.com, raw.githubusercontent.com,
+> 303 KB firmware download). End-to-end OTA via MQTT command confirmed working.
+>
+> `+CCHRECV` field order confirmed:
+> - `+CCHRECV: DATA,<session>,<len>` — `sslRead()`
+> - `+CCHRECV: LEN,<cache_len_0>,<cache_len_1>` — `sslAvailable()`
+
+Three bugs discovered and fixed during hardware validation (committed separately):
+
+- **`+CCH_PEER_CLOSED` data loss** — HTTP/1.0 servers send data and close in quick
+  succession. `sslAvailable()` called `sslConnected()` (→ `AT+CCHOPEN?`) first; by
+  the time that returned, the connection was gone and the buffer was never read. Fixed
+  with a `peer_closed[]` flag that bypasses the connected check and drains the buffer.
+
+- **`AT+CCHOPEN?` polled on every `maintain()` cycle** — hundreds of unnecessary
+  round-trips during a large download. Fixed: `sslAvailable()` now checks the
+  URC-maintained `sock_connected` flag instead of issuing `AT+CCHOPEN?`.
+
+- **`getLocalIPImpl()` returns AT echo with `StreamDebugger`** — `getLocalIP()`
+  returned `"AT+IPADDR+IPADDR: x.x.x.x"`. Fixed: parse `+IPADDR:` marker and
+  return just the address.
+
+#### 2. Runtime PSRAM detection (`TinyGsmCommon.h`)
+
+`TINY_GSM_MALLOC` / `TINY_GSM_REALLOC` previously switched between
+`ps_malloc`/`ps_realloc` and plain `malloc`/`realloc` via the compile-time
+`BOARD_HAS_PSRAM` flag. On boards where PSRAM is wired but defective,
+`ps_malloc` returns `NULL` and MQTT silently never starts.
+
+On ESP32 targets, the flag is replaced with a runtime check:
+
+```cpp
+static inline bool tinygsm_has_psram() {
+    static const bool _psram = psramFound();
+    return _psram;
+}
+```
+
+`psramFound()` is called once at startup and cached. Falls back to plain
+`malloc` if PSRAM is absent or fails to initialise. The `-UBOARD_HAS_PSRAM`
+build flag workaround is no longer needed.
+
+---
 <!---
 [![GitHub download](https://img.shields.io/github/downloads/vshymanskyy/TinyGSM/total.svg)](https://github.com/vshymanskyy/TinyGSM/releases/latest)--->
 [![GitHub version](https://img.shields.io/github/release/vshymanskyy/TinyGSM.svg)](https://github.com/vshymanskyy/TinyGSM/releases/latest)
@@ -70,6 +151,8 @@ TinyGSM also pulls data gently from the modem (whenever possible), so it can ope
 - SIMCom LTE Modules (SIM7100E, SIM7500E, SIM7500A, SIM7600C, SIM7600E)
 - SIMCom SIM7000E/A/G CAT-M1/NB-IoT Module
 - SIMCom SIM7070/SIM7080/SIM7090 CAT-M1/NB-IoT Module
+- **SIMCom A7670 / A7608** (ASR-based LTE Cat-1) ← lewisxhe fork
+- **SIMCom SIM7672 / SIM7670G** (Qualcomm-based LTE Cat-M1/NB1/GPRS + GNSS) ← lewisxhe fork
 - AI-Thinker A6, A6C, A7, A20
 - ESP8266/ESP32 (AT commands interface, similar to GSM modems)
 - Digi XBee WiFi and Cellular (using XBee command mode)
@@ -127,6 +210,8 @@ Watch this repo for new updates! And of course, contributions are welcome ;)
     - Supported on:
         - SIM800, SIM7000, u-Blox, XBee _cellular_, ESP8266, and Sequans Monarch
         - Note:  **only some device models or firmware revisions have this feature** (SIM8xx R14.18, A7, etc.)
+        - **A7670 / A7608** — full TLS socket via `TinyGsmClientA76xxSSL` (`+CCH` commands) ← lewisxhe fork
+        - **SIM7672 / SIM7670G** — TLS socket via `GsmClientSecureSIM7672` (`+CCH` commands) ← **this fork** (awaiting hardware test)
     - Not yet supported on:
         - Quectel modems, SIM 5360/5320/7100, SIM 7500/7600/7800
     - Not possible on:
