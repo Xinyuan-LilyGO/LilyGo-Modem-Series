@@ -64,7 +64,8 @@
 ### A7670E-FASE GPS
 
 <!-- A011B07V01A7670M7_F_A7670E-FASE_CD_V101230711 -->
-* [A7670E-FASE B07](https://drive.google.com/file/d/1-5A9w4MCXNz6F5ODhynne0rC9IUOeOdH/view?usp=sharing)<!-- 20241008 Update Fixed  HTTP 715 error-->
+* [A7670E-FASE A011B07V01A7670M7](https://drive.google.com/file/d/1-5A9w4MCXNz6F5ODhynne0rC9IUOeOdH/view?usp=sharing)<!-- 20241008 Update Fixed  HTTP 715 error-->
+* 🆕[A7670E-FASE A011B09A7670M7](https://drive.google.com/file/d/1xLY0xmofZpixy3Rd_NGj4DkoVnh_U3tP/view?usp=sharing)<!-- Fix MQTTS TLS : https://github.com/Xinyuan-LilyGO/LilyGo-Modem-Series/issues/515-->
 
 ------------------------
 

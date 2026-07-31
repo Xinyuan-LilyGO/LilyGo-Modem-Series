@@ -6,6 +6,23 @@
 
 # 本页汇总了 SIMCOM 固件 BUG 版本号
 
+## A7670E-FASE
+
+### 已知版本固件 BUG
+#### BUG: MQTTS TLS 握手失败
+
+-----------------------
+
+```bash
+Model: A7670E-FASE
+Revision: A011B07A7670M7_F
+A7670M7_B07V01_240927
+```
+
+* [#515](https://github.com/Xinyuan-LilyGO/LilyGo-Modem-Series/issues/515)
+
+------------------------
+
 ## A7670G-LLSE
 
 ### 已知版本固件 BUG

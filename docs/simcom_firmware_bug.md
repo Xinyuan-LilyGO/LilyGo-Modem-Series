@@ -7,6 +7,24 @@
 
 # This page summarizes SIMCOM firmware BUG version numbers
 
+## A7670E-FASE
+
+### Known version firmware bugs
+#### BUG: MQTTS TLS handshake fails
+
+-----------------------
+
+```bash
+Model: A7670E-FASE
+Revision: A011B07A7670M7_F
+A7670M7_B07V01_240927
+```
+
+* [#515](https://github.com/Xinyuan-LilyGO/LilyGo-Modem-Series/issues/515)
+
+------------------------
+
+
 ## A7670G-LLSE
 
 ### Known version firmware bugs
