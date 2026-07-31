@@ -19,12 +19,12 @@
 
 ### `1`Flash Tools
 
-- [SIM7670G FlashTools](https://drive.google.com/file/d/1-CHQOXQhCJRr1S8rP_AGHVWGqE823wem/view?usp=sharing)
 - [SIM7670G UpgradeTools](https://drive.google.com/file/d/19M-_COv_gkZ9KBwzqfWTWWJSYUEjOK8-/view?usp=sharing)
 
 > \[!IMPORTANT]
-> Please do not use older versions of Flash Tools, as they are unable to select the port on some computers.
-
+> **Please do not use older versions of Flash Tools, as they are unable to select the port on some computers.**
+>
+> **If using an older version of FlashTools, do not select "Erase All," otherwise it will cause RF loss and render the modem inoperable. LilyGo does not recommend using older versions of FlashTools.**
 
 ### `2`Driver
 

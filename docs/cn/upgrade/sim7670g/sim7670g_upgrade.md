@@ -21,11 +21,12 @@
 
 ### `1`刷机工具
 
-- [SIM7670G FlashTools](https://drive.google.com/file/d/1-CHQOXQhCJRr1S8rP_AGHVWGqE823wem/view?usp=sharing)
 - [SIM7670G UpgradeTools](https://drive.google.com/file/d/19M-_COv_gkZ9KBwzqfWTWWJSYUEjOK8-/view?usp=sharing)
 
 > \[!IMPORTANT]
 > 请不要使用旧版本的刷机工具，因为它们在某些电脑上无法选择端口。
+>
+> 如果使用旧版本FlashTools，千万不要勾选EraseAll,否则会造成射频丢失导致modem无法工作,LilyGo 不推荐使用旧版FlashTools
 
 
 ### `2`驱动
