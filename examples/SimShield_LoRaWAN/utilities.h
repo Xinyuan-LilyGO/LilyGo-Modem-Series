@@ -808,6 +808,16 @@
 
     #define PRODUCT_MODEL_NAME                  "LilyGo-T-PCIE-SIM7600X"
 
+#elif defined(LILYGO_T_PCIE_A7608X)
+
+    #define LILYGO_T_PCIE
+
+    #ifndef TINY_GSM_MODEM_A7608
+        #define TINY_GSM_MODEM_A7608
+    #endif
+
+    #define PRODUCT_MODEL_NAME                  "LilyGo-T-PCIE-A7608X"
+
 #elif defined(LILYGO_T_PCIE_SIM7670G)
 
     #define LILYGO_T_PCIE

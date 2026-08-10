@@ -132,6 +132,16 @@
     #define SIMSHIELD_SCL                       (22)
     #define SerialRS485                         Serial2
 
+    // The following pins are for SIM-DC-Shield and need to be used with SIM-DC-Shield
+    // !以下引脚针对SIM-DC-Shield,需要搭配SIM-DC-Shield
+    #define SIM_DC_SHIELD_A0                    (34)
+    #define SIM_DC_SHIELD_A1                    (39)
+    #define SIM_DC_SHIELD_D0                    (19)
+    #define SIM_DC_SHIELD_D1                    (18)
+    #define SIM_DC_SHIELD_SENSOR_IRQ            (32)
+    #define BOARD_SDA_PIN                       (21)
+    #define BOARD_SCL_PIN                       (22)
+
     #define PRODUCT_MODEL_NAME                  "LilyGo-A7670 ESP32 Version"
 
 #elif defined(LILYGO_T_CALL_A7670_V1_0)
@@ -229,6 +239,16 @@
     #define SIMSHIELD_SCL                       (1)
     #define SerialRS485                         Serial2
 
+    // The following pins are for SIM-DC-Shield and need to be used with SIM-DC-Shield
+    // !以下引脚针对SIM-DC-Shield,需要搭配SIM-DC-Shield
+    #define SIM_DC_SHIELD_A0                    (7)
+    #define SIM_DC_SHIELD_A1                    (6)
+    #define SIM_DC_SHIELD_D0                    (15)
+    #define SIM_DC_SHIELD_D1                    (16)
+    #define SIM_DC_SHIELD_SENSOR_IRQ            (8)
+    #define BOARD_SDA_PIN                       (2)
+    #define BOARD_SCL_PIN                       (1)
+
     #define PRODUCT_MODEL_NAME                  "LilyGo-SIM7670G-S3"
 
 #elif defined(LILYGO_T_A7608X)
@@ -281,6 +301,16 @@
     #define SIMSHIELD_SCL                       (22)
     #define SerialRS485                         Serial2
 
+    // The following pins are for SIM-DC-Shield and need to be used with SIM-DC-Shield
+    // !以下引脚针对SIM-DC-Shield,需要搭配SIM-DC-Shield
+    #define SIM_DC_SHIELD_A0                    (36)
+    #define SIM_DC_SHIELD_A1                    (39)
+    #define SIM_DC_SHIELD_D0                    (19)
+    #define SIM_DC_SHIELD_D1                    (18)
+    #define SIM_DC_SHIELD_SENSOR_IRQ            (32)
+    #define BOARD_SDA_PIN                       (21)
+    #define BOARD_SCL_PIN                       (22)
+
     #define PRODUCT_MODEL_NAME                  "LilyGo-A7608X ESP32 Version"
 
 #elif defined(LILYGO_T_A7608X_S3)
@@ -328,6 +358,16 @@
     #define SIMSHIELD_SDA                       (2)
     #define SIMSHIELD_SCL                       (1)
     #define SerialRS485                         Serial2
+
+    // The following pins are for SIM-DC-Shield and need to be used with SIM-DC-Shield
+    // !以下引脚针对SIM-DC-Shield,需要搭配SIM-DC-Shield
+    #define SIM_DC_SHIELD_A0                    (10)
+    #define SIM_DC_SHIELD_A1                    (9)
+    #define SIM_DC_SHIELD_D0                    (12)
+    #define SIM_DC_SHIELD_D1                    (11)
+    #define SIM_DC_SHIELD_SENSOR_IRQ            (8)
+    #define BOARD_SDA_PIN                       (2)
+    #define BOARD_SCL_PIN                       (1)
 
     #define PRODUCT_MODEL_NAME                  "LilyGo-A7608X-S3"
 
@@ -394,9 +434,14 @@
     #endif
 
     // 127 is defined in GSM as the AUXVDD index
-    #define MODEM_GPS_ENABLE_GPIO               (48)
+    #if defined(LILYGO_SIM7070G)
+        // Early firmware allowed configuration via physical GPIOs, while later firmware only allowed configuration via GPIO indexes.
+        #define MODEM_GPS_ENABLE_GPIO               (5)
+    #else
+        #define MODEM_GPS_ENABLE_GPIO               (48)
+    #endif
     #define MODEM_GPS_ENABLE_LEVEL              (1)
-    
+
     //! The following pins are for SimShield and need to be used with SimShield
     //! 以下引脚针对SimShield,需要搭配SimShield 
     #define SIMSHIELD_MOSI                      (23)
@@ -414,6 +459,16 @@
     #define SerialRS485                         Serial2
 
 
+    // The following pins are for SIM-DC-Shield and need to be used with SIM-DC-Shield
+    // !以下引脚针对SIM-DC-Shield,需要搭配SIM-DC-Shield
+    #define SIM_DC_SHIELD_A0                    (34)
+    #define SIM_DC_SHIELD_A1                    (39)
+    #define SIM_DC_SHIELD_D0                    (18)
+    #define SIM_DC_SHIELD_D1                    (19)
+    // Share with esp boot pin
+    #define SIM_DC_SHIELD_SENSOR_IRQ            (32)
+    #define BOARD_SDA_PIN                       (21)
+    #define BOARD_SCL_PIN                       (22)
 
 #elif defined(LILYGO_SIM7600X)
 
@@ -422,6 +477,7 @@
     #define MODEM_TX_PIN                        (27)
     #define MODEM_FLIGHT_PIN                    (25)
     #define MODEM_STATUS_PIN                    (34)
+    #define MODEM_RING_PIN                      (33)
 
     #define BOARD_MISO_PIN                      (2)
     #define BOARD_MOSI_PIN                      (15)
@@ -447,10 +503,6 @@
     #define MODEM_GPS_ENABLE_GPIO               (127)
     #define MODEM_GPS_ENABLE_LEVEL              (1)
 
-
-
-
-
     //! The following pins are for SimShield and need to be used with SimShield
     //! 以下引脚针对SimShield,需要搭配SimShield 
     #define SIMSHIELD_MOSI                      (23)
@@ -466,6 +518,17 @@
     #define SIMSHIELD_SDA                       (21)
     #define SIMSHIELD_SCL                       (22)
     #define SerialRS485                         Serial2
+
+    // The following pins are for SIM-DC-Shield and need to be used with SIM-DC-Shield
+    // !以下引脚针对SIM-DC-Shield,需要搭配SIM-DC-Shield
+    // Share with esp boot pin
+    #define SIM_DC_SHIELD_A0                    (0) //!<< ERROR:
+    #define SIM_DC_SHIELD_A1                    (39)
+    #define SIM_DC_SHIELD_D0                    (19)
+    #define SIM_DC_SHIELD_D1                    (18)
+    #define SIM_DC_SHIELD_SENSOR_IRQ            (5)
+    #define BOARD_SDA_PIN                       (21)
+    #define BOARD_SCL_PIN                       (22)
 
     #define PRODUCT_MODEL_NAME                  "LilyGo-SIM7600X ESP32 Version"
 
@@ -533,6 +596,13 @@
     #define SerialAT                            Serial1
    
     
+    // GPIO used in SIM-DC-Shield
+    #define SIM_DC_SHIELD_A0                    (14)
+    #define SIM_DC_SHIELD_A1                    (9)
+    #define SIM_DC_SHIELD_D0                    (16)
+    #define SIM_DC_SHIELD_D1                    (15)
+    #define SIM_DC_SHIELD_SENSOR_IRQ            (21)
+
     // This board has connected the ADC circuit to the modem, and the battery voltage can be read via AT+CBC
     #define MODEM_CONNECTED_ADC_PIN
 
@@ -737,6 +807,16 @@
     #endif
 
     #define PRODUCT_MODEL_NAME                  "LilyGo-T-PCIE-SIM7600X"
+
+#elif defined(LILYGO_T_PCIE_A7608X)
+
+    #define LILYGO_T_PCIE
+
+    #ifndef TINY_GSM_MODEM_A7608
+        #define TINY_GSM_MODEM_A7608
+    #endif
+
+    #define PRODUCT_MODEL_NAME                  "LilyGo-T-PCIE-A7608X"
 
 #elif defined(LILYGO_T_PCIE_SIM7670G)
 
