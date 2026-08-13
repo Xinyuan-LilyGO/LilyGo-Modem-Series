@@ -140,8 +140,8 @@
 
 | Name                  | GPIO NUM | Enable level | AT Command          |
 | --------------------- | -------- | ------------ | ------------------- |
-| GPS Ant Power Enable  | 48       | High         | `AT+SGPIO=0,48,1,1` |
-| GPS Ant Power Disable | 48       | Low          | `AT+SGPIO=0,48,1,0` |
+| GPS Ant Power Enable  | 48       | High         | `AT+CGPIO=0,48,1,1` |
+| GPS Ant Power Disable | 48       | Low          | `AT+CGPIO=0,48,1,0` |
 
 * Before or after enabling GPS, the active antenna needs to be powered on; otherwise, positioning will not be possible.
 
