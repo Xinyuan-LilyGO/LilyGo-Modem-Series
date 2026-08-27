@@ -43,8 +43,12 @@ TinyGsm modem(SerialAT);
 void setup()
 {
     Serial.begin(115200); // Set console baud rate
-
+    delay(1000);
     SerialAT.begin(115200, SERIAL_8N1, MODEM_RX_PIN, MODEM_TX_PIN);
+    Serial.println("Modem Serial started");
+    Serial.printf("Use sketch : %s\n", __FILE__);
+    Serial.print("Use modem: "); Serial.println(PRODUCT_MODEL_NAME);
+    Serial.printf("Arduino esp32 core version: %d.%d.%d\n", ESP_ARDUINO_VERSION_MAJOR, ESP_ARDUINO_VERSION_MINOR, ESP_ARDUINO_VERSION_PATCH);
 
 #ifdef BOARD_LED_PIN
     pinMode(BOARD_LED_PIN, OUTPUT);
@@ -117,7 +121,7 @@ void setup()
 
     delay(5000);
 
-        // Print modem software version
+    // Print modem software version
     String res;
     modem.sendAT("+SIMCOMATI");
     modem.waitResponse(10000UL, res);
