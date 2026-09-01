@@ -136,25 +136,25 @@
 
 ### 📍 Pins Map
 
-| Name            | GPIO NUM     | Free |
-| --------------- | ------------ | ---- |
-| Modem TX        | 27           | ❌    |
-| Modem RX        | 26           | ❌    |
-| Modem PWRKEY    | 4            | ❌    |
-| Modem RING      | 33           | ❌    |
-| Modem DTR       | 32           | ❌    |
-| Modem Flight    | 25           | ❌    |
-| Modem Status    | 34           | ❌    |
-| Board LED       | 12           | ❌    |
-| SD SCK          | 14           | ❌    |
-| SD MISO         | 2            | ❌    |
-| SD MOSI         | 15           | ❌    |
-| SD CS           | 13           | ❌    |
-| Battery ADC Pin | 35           | ❌    |
-| Solar ADC Pin   | 36           | ❌    |
-| GPS Enabled     | Modem AUXVDD | ❌    |
-| Default SDA     | 21           | ✅️    |
-| Default SCL     | 22           | ✅️    |
+| Name            | GPIO NUM      | Free |
+| --------------- | ------------- | ---- |
+| Modem TX        | 27            | ❌    |
+| Modem RX        | 26            | ❌    |
+| Modem PWRKEY    | 4             | ❌    |
+| Modem RING      | 33            | ❌    |
+| Modem DTR       | 32            | ❌    |
+| Modem Flight    | 25            | ❌    |
+| Modem Status    | 34            | ❌    |
+| Board LED       | 12            | ❌    |
+| SD SCK          | 14            | ❌    |
+| SD MISO         | 2             | ❌    |
+| SD MOSI         | 15            | ❌    |
+| SD CS           | 13            | ❌    |
+| Battery ADC Pin | 35 (See Tips) | ❌    |
+| Solar ADC Pin   | 36            | ❌    |
+| GPS Enabled     | Modem AUXVDD  | ❌    |
+| Default SDA     | 21            | ✅️    |
+| Default SCL     | 22            | ✅️    |
 
 * The Modem Flight pin must be set to high when connecting to the network, otherwise it will be in offline mode and unable to connect to the cellular network.
 * Peripheral power control pin. When using SD or modem, this GPIO must be set to high level, otherwise these functions cannot be used.
@@ -170,6 +170,9 @@
 > GPIO32 (Modem DTR) is exposed on the header. Do not connect any wires to the GPIO32 position on the header; keep it disconnected.
 >
 > GPIO33 (Modem RI) is exposed on the header. Do not connect any wires to the GPIO33 position on the header; keep it disconnected.
+>
+> ⚠ When USB-C is connected, the GPIO35 ADC circuit is disconnected, so the measured voltage is 0. The voltage divider circuit will only be connected again after USB-C is disconnected.
+>
 
 ### ⚡ Electrical parameters
 
@@ -221,11 +224,11 @@
 
 ### Antenna Description
 
-|      | Function                     |
-| ---- | ---------------------------- |
-| MAIN | LTE Main antenna interface   |
+|      | Function                        |
+| ---- | ------------------------------- |
+| MAIN | LTE Main antenna interface      |
 | AUX  | LTE Diversity antenna interface |
-| GPS  | GPS active antenna interface |
+| GPS  | GPS active antenna interface    |
 
 * When using, you only need to connect the LTE antenna you wear to the MAIN IPEX first generation interface. The AUX antenna does not need to be connected.
 * The above naming method is subject to the board silk screen printing

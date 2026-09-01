@@ -10,7 +10,7 @@
  *                         When connected to the USB, the battery voltage data read is not the real battery voltage, so the battery
  *                         voltage is sent to the UDP Server through UDP. When using it, please disconnect the USB-C
  *            T-A7670x :  Only version V1.4 has the resistor divider connected to the solar input, other versions IO38 is not connected
- *            T-SIM7600 series ：When the USB is connected, the battery mV is 0 because the battery voltage cannot be read when the USB is plugged in.
+ *            T-SIM7600 series ,T-SIM7670G ：When the USB is connected, the battery mV is 0 because the battery voltage cannot be read when the USB is plugged in.
  *
  * @note      Only support T-A7670 ,T-A7608X, T-SIM7672G board , not support T-Call A7670 , T-PCIE-A7670
  *

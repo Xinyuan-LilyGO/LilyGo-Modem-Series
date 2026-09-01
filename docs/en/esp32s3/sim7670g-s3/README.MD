@@ -94,21 +94,21 @@
 
 ### 📍 Pins Map
 
-| Name            | GPIO NUM | Free |
-| --------------- | -------- | ---- |
-| Modem TX        | 11       | ❌    |
-| Modem RX        | 10       | ❌    |
-| Modem PWRKEY    | 18       | ❌    |
-| Modem RESET     | 17       | ❌    |
-| Modem RING      | 3        | ❌    |
-| Modem DTR       | 9        | ❌    |
-| Board LED       | 12       | ❌    |
-| Battery ADC Pin | 4        | ❌    |
-| Solar ADC Pin   | 5        | ❌    |
-| SD SCK          | 21       | ❌    |
-| SD MISO         | 47       | ❌    |
-| SD MOSI         | 14       | ❌    |
-| SD CS           | 13       | ❌    |
+| Name            | GPIO NUM     | Free |
+| --------------- | ------------ | ---- |
+| Modem TX        | 11           | ❌    |
+| Modem RX        | 10           | ❌    |
+| Modem PWRKEY    | 18           | ❌    |
+| Modem RESET     | 17           | ❌    |
+| Modem RING      | 3            | ❌    |
+| Modem DTR       | 9            | ❌    |
+| Board LED       | 12           | ❌    |
+| Battery ADC Pin | 4 (See Tips) | ❌    |
+| Solar ADC Pin   | 5            | ❌    |
+| SD SCK          | 21           | ❌    |
+| SD MISO         | 47           | ❌    |
+| SD MOSI         | 14           | ❌    |
+| SD CS           | 13           | ❌    |
 
 > \[!TIP]
 >
@@ -119,6 +119,8 @@
 > ADC Pins: Only pins 1-21 are allowed as ADC inputs.
 >
 > IO0/IO3/IO45/IO46 are Strapping Pins; their use is limited. Please see the **Strapping Pins** section of the [online documentation](https://documentation.espressif.com/esp32-s3_datasheet_en.pdf) for details.
+>
+> ⚠ When USB-C is connected, the GPIO4 ADC circuit is disconnected, so the measured voltage is 0. The voltage divider circuit will only be connected again after USB-C is disconnected.
 >
 
 ### Modem Pins

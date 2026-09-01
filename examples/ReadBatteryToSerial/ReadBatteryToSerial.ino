@@ -4,8 +4,10 @@
  * @license   MIT
  * @copyright Copyright (c) 2026  Shenzhen Xin Yuan Electronic Technology Co., Ltd
  * @date      2026-03-24
- * @note      Only support T-A7670 ,T-A7608X, T-SIM7672G board , not support T-Call A7670 , T-PCIE-A7670
+ * @note      Only support T-A7670 ,T-A7608X, T-SIM7670G board , not support T-Call A7670 , T-PCIE-A7670
  *
+ *            T-SIM7600 series ,T-SIM7670G ：When the USB is connected, the battery mV is 0 because the battery voltage cannot be read when the USB is plugged in.
+ * 
  * Use an external serial bridge to monitor changes in battery voltage.
  *
  *  Platformio User: In platformio.ini, enable the -UARDUINO_USB_CDC_ON_BOOT field in the [esp32s3_base] section,
