@@ -127,6 +127,9 @@
 | -------------------- | -------- | -------- | ------------------------------ |
 | GPS Ant Power Enable | 4        | High     | `AT+CGDRT=4,1 ; AT+CGSETV=4,1` |
 
+> [!IMPORTANT]
+> 🚨 **使用 GPS/GNSS 前必须先开启有源天线供电！** SIM7670G-S3 使用模块 GPIO4 控制天线电源；请先发送 `AT+CGDRT=4,1; AT+CGSETV=4,1` 开启供电，否则将无法定位或无法获得 GPS fix。不使用 GPS/GNSS 时，可发送 `AT+CGDRT=4,1; AT+CGSETV=4,0` 关闭天线供电以降低功耗。
+
 ### ⚡ Electrical parameters
 
 | 特性                      | 详情  |

@@ -139,7 +139,8 @@
 | GPS Ant Power Enable  | 48       | High         | `AT+CGPIO=0,48,1,1` |
 | GPS Ant Power Disable | 48       | Low          | `AT+CGPIO=0,48,1,0` |
 
-* Before or after enabling GPS, the active antenna needs to be powered on; otherwise, positioning will not be possible.
+> [!IMPORTANT]
+> 🚨 **Before using GPS/GNSS, you must enable power to the active antenna by sending `AT+CGPIO=0,48,1,1`; otherwise, the modem cannot obtain a position fix. Disable the antenna power with `AT+CGPIO=0,48,1,0` when GPS/GNSS is not in use.**
 
 ### ⚡ Electrical parameters
 

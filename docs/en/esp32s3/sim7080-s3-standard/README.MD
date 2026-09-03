@@ -149,8 +149,8 @@
 | GPS Ant Power Enable  | 5        | High         | `AT+SGPIO=0,5,1,1` |
 | GPS Ant Power Disable | 5        | Low         | `AT+SGPIO=0,5,1,0` |
 
-* Before or after enabling GPS, the active antenna needs to be powered on; otherwise, positioning will not be possible.
-
+> [!IMPORTANT]
+> 🚨 **Before using GPS/GNSS, you must enable power to the active antenna by sending `AT+SGPIO=0,5,1,1`; otherwise, the modem cannot obtain a position fix. Disable the antenna power with `AT+SGPIO=0,5,1,0` when GPS/GNSS is not in use.**
 
 * The `Power Save Mode pin` is used to set the power capability of the power supply. Setting it to HIGH enables maximum power output. Setting it to LOW reduces current consumption.
 * If a camera is connected externally, there will be no free GPIO. If the camera is not used, the camera's GPIO can be used for other purposes.
@@ -162,7 +162,6 @@
 The power-on sequence is: power on all cameras -> power off all cameras -> delay 300 milliseconds -> power on all cameras -> delay 100 milliseconds.
 * `Camera PWD` : In order to maximize the use of GPIO, all GPIOs are not assigned to the camera PWD Pin. When the camera is not in use, you only need to turn off the camera power to completely turn off the power supply of the camera.
 * `Camera Pins` : if the camera is not used, then all the pins assigned to the camera by default can be freely allocated and used without restrictions
-* `GPS Ant Power Enable` : When using GPS, you must set the modem's GPIO1 to high level by sending `AT+SGPIO=0,5,1,1`. When not using GPS, you can send `AT+SGPIO=0,5,1,0` to turn off the GPS antenna power supply and save power.
 
   <img  height="320" width="320" src=./images/flow_control.png>
 

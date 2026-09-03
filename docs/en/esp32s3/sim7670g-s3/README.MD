@@ -129,6 +129,9 @@
 | -------------------- | -------- | ------------ | ------------------------------ |
 | GPS Ant Power Enable | 4        | High         | `AT+CGDRT=4,1 ; AT+CGSETV=4,1` |
 
+> [!IMPORTANT]
+> 🚨 **Before using GPS/GNSS, you must configure modem GPIO4 as an output and drive it HIGH by sending `AT+CGDRT=4,1; AT+CGSETV=4,1`; otherwise, the modem cannot obtain a position fix. Disable the antenna power with `AT+CGDRT=4,1; AT+CGSETV=4,0` when GPS/GNSS is not in use.**
+
 ### ⚡ Electrical parameters
 
 | Features                        | Details |

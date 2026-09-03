@@ -149,8 +149,8 @@
 | GPS Ant Power Enable  | 5        | High         | `AT+SGPIO=0,5,1,1` |
 | GPS Ant Power Disable | 5        | Low         | `AT+SGPIO=0,5,1,0` |
 
-* Before or after enabling GPS, the active antenna needs to be powered on; otherwise, positioning will not be possible.
-
+> [!IMPORTANT]
+> 🚨 **使用 GPS/GNSS 前必须先开启有源天线供电！** SIM7080 使用模块 GPIO5 控制天线电源；请先发送 `AT+SGPIO=0,5,1,1` 开启供电，否则将无法定位或无法获得 GPS fix。不使用 GPS/GNSS 时，可发送 `AT+SGPIO=0,5,1,0` 关闭天线供电以降低功耗。
 
 * The `Power Save Mode pin` is used to set the power capability of the power supply. Setting it to HIGH enables maximum power output. Setting it to LOW reduces current consumption.
 * If a camera is connected externally, there will be no free GPIO. If the camera is not used, the camera's GPIO can be used for other purposes.
@@ -162,8 +162,6 @@
 The power-on sequence is: power on all cameras -> power off all cameras -> delay 300 milliseconds -> power on all cameras -> delay 100 milliseconds.
 * `Camera PWD` : In order to maximize the use of GPIO, all GPIOs are not assigned to the camera PWD Pin. When the camera is not in use, you only need to turn off the camera power to completely turn off the power supply of the camera.
 * `Camera Pins` : if the camera is not used, then all the pins assigned to the camera by default can be freely allocated and used without restrictions
-* `GPS Ant Power Enable` : When using GPS, you must set the modem's GPIO1 to high level by sending `AT+SGPIO=0,5,1,1`. When not using GPS, you can send `AT+SGPIO=0,5,1,0` to turn off the GPS antenna power supply and save power.
-
   <img  height="320" width="320" src=./images/flow_control.png>
 
 ### ⚡ Electrical parameters
