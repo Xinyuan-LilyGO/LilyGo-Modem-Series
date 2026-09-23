@@ -33,6 +33,10 @@
 * [PN:S2-107EQ-Z30LC](https://drive.google.com/file/d/1kHsw8LXSm2FYmcSWsaYiS7G8vvF9q2No/view?usp=sharing)
 * [PN:S2-107EQ-Z30AN](https://drive.google.com/file/d/1kHsw8LXSm2FYmcSWsaYiS7G8vvF9q2No/view?usp=sharing)
 
+###### SIM7600E-L1C
+
+* [PN:S2-10A9C-Z31VW](https://drive.google.com/file/d/1huASLR3t2F_hZx7m92I-onnwKCmGh8fU/view?usp=sharing)
+
 #### 2. Switch USB input to Modem
 
 1. Turn the DIP switch on the back of the USB to the position shown in the figure below
