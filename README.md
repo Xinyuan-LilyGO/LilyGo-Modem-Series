@@ -205,7 +205,7 @@
   <tr style="border: 0;">
     <!-- T-SIM7600G-S3-Standard -->
     <td style="padding: 10px 20px; width: 33.33%; border: 0; background: transparent;">
-      <a href="./docs/en/esp32s3/sim7600g-s3-standard/README.MD" style="text-decoration: none; display: block;">
+      <a href="./docs/en/shield/n322-t-sim7600g-s3-standard-expansionkit/README.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/H803-N322.png" alt="T-SIM7600G-S3-Standard-ExpansionKit" width="200" style="border: 0;"/>
         <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-SIM7600G-S3-Standard-ExpansionKit Usage Guide</div>
       </a>
