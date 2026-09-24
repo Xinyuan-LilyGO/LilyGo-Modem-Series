@@ -25,7 +25,7 @@ TinyGsm modem(SerialAT);
 
 #if defined(TINY_GSM_MODEM_SIM7000SSL) || defined(TINY_GSM_MODEM_SIM7000) \
     || defined(TINY_GSM_MODEM_SIM7080) || defined(TINY_GSM_MODEM_SIM7600) \
-    defined(TINY_GSM_MODEM_SIM7670G)
+    || defined(TINY_GSM_MODEM_SIM7670G)
 #error "This modem not support play audio function"
 #endif
 
