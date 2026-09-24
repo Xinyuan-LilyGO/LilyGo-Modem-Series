@@ -44,4 +44,4 @@
 
 ## AT Command datasheet
 
-- [](../../../../datasheet/SIM7600X/SIM7500_SIM7600%20Series_AT%20Command%20Manual_V3.00.pdf)
+- [AT Command datasheet](../../../../datasheet/SIM7600X/SIM7500_SIM7600%20Series_AT%20Command%20Manual_V3.00.pdf)
