@@ -132,9 +132,24 @@ public:
             ssl_version = TINYGSM_SSL_TLS1_2;
         }
 
-        // Set SNI
-        thisModem().sendAT("+CSSLCFG=\"sni\",0,", enableSNI ? 1 : 0);
-        thisModem().waitResponse();
+        // SIM7xxx expects the server name as the third SNI parameter.
+        String serverName = _baseDomain;
+        int schemeEnd = serverName.indexOf("://");
+        if (schemeEnd >= 0) {
+            serverName.remove(0, schemeEnd + 3);
+        }
+        int portStart = serverName.indexOf(':');
+        if (portStart >= 0) {
+            serverName.remove(portStart);
+        }
+        if (enableSNI) {
+            thisModem().sendAT("+CSSLCFG=\"sni\",", _ctxindex, ',', serverName);
+        } else {
+            thisModem().sendAT("+CSSLCFG=\"sni\",", _ctxindex, ",\"\"");
+        }
+        if (thisModem().waitResponse(3000) != 1) {
+            return false;
+        }
 
         // https://github.com/Xinyuan-LilyGO/LilyGO-T-A76XX/issues/243
         // Set SSL Version
