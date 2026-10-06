@@ -117,6 +117,11 @@
 | 🔗USB-C Input Voltage      | 5V      |
 | ⚡USB-C Charge Max Current | 1000mA  |
 | 🔋Battery Voltage          | 3.7V    |
+| 🔋Battery Type             | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
+
+> \[!IMPORTANT]
+>
+> Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
 
 * The charging current can be adjusted by PMIC, up to 1A
 

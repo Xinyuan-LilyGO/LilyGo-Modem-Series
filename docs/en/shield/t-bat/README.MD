@@ -22,8 +22,13 @@
 | USB input voltage                      | 4.5~5.5V |
 | Solar Input Voltage                    | 4.5 ~ 6V |
 | Battery interface allows input voltage | 4.2V     |
+| Battery Type                           | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
 | MicroUSB/Solar Charge Max Current      | 500mA    |
 | USB OUT                                | 1A       |
+
+> \[!IMPORTANT]
+>
+> Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
 
 ### ⚡Battery Protector Description
 

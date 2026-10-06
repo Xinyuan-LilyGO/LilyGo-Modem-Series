@@ -24,9 +24,14 @@
 | --------------------------------------- | ----------------------------- |
 | ⚡DC interface allows input voltage      | 7~36V                         |
 | ⚡Battery interface allows input voltage | 4.2V                          |
+| 🔋Battery Type                       | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
 | ⚡Charge Current                         | Provided by the motherboard   |
 | ⚡+5V                                    | The maximum current can be 2A |
 | ⚡+3V3                                   | Provided by the motherboard   |
+
+> \[!IMPORTANT]
+>
+> Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
 
 * It is recommended not to connect the +3V3 pin to peripheral devices with a current exceeding 100mA, as different motherboards provide different currents.
 

@@ -66,8 +66,13 @@ Connector interface type: XH 2.54-4P
 | -------------------------------------- | ---------------------------- |
 | DC input voltage                       | 7~36V / 3A                   |
 | Battery interface allows input voltage | 4.2V                         |
+| Battery Type                           | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
 | MicroUSB/Solar Charge Max Current      | Determined by the base plate |
 | Battery Protector                      | Determined by the base plate |
+
+> \[!IMPORTANT]
+>
+> Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
 
 ### LED Description
 

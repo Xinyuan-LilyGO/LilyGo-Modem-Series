@@ -122,14 +122,20 @@
 
 ### ⚡ Electrical parameters
 
-| Features                        | Details |
-| ------------------------------- | ------- |
-| 🔗USB-C Input Voltage            | 5V      |
-| ⚡Solar Input Voltage            | 5~6V    |
-| ⚡USB-C/Solar Charge Max Current | 500mA   |
-| 🔋Battery Voltage                | 3.7V    |
-| 📍**VBUS** ( Pin header)         | 5V      |
-| 📍**VBAT** ( Pin header)         | 4.2V    |
+| Features                        | Details             |
+| ------------------------------- | ------------------- |
+| 🔗USB-C Input Voltage            | 5V                  |
+| ⚡Solar Input Voltage            | 5~6V                |
+| ⚡USB-C/Solar Charge Max Current | 500mA               |
+| 🔋Battery Voltage                | 3.7V                |
+| 🔋Battery Type                   | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
+| 📍**VBUS** ( Pin header)         | 5V                  |
+| 📍**VBAT** ( Pin header)         | 4.2V                |
+
+> \[!IMPORTANT]
+>
+> Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
+>
 
 > \[!TIP]
 >
@@ -173,11 +179,11 @@
 
 ### Antenna Description
 
-|      | Function                     |
-| ---- | ---------------------------- |
-| SIM  | LTE Main antenna interface   |
+|      | Function                        |
+| ---- | ------------------------------- |
+| SIM  | LTE Main antenna interface      |
 | AUX  | LTE Diversity antenna interface |
-| GNSS | GPS active antenna interface |
+| GNSS | GPS active antenna interface    |
 
 * When using, you only need to connect the LTE antenna you wear to the SIM IPEX first generation interface. The AUX antenna does not need to be connected.
 * The above naming method is subject to the board silk screen printing
@@ -231,4 +237,3 @@
   1. The external GPS antenna must be an active GPS antenna with a 3.3V power supply. For example, the [MK-76](https://www.rfmw.com/datasheets/sanav/mk-76.pdf) supports 2.5-5.5V and is compatible. Most active GPS antennas support 2.5-5.5V power. Please refer to the GPS antenna datasheet for details.
 
 [2]: https://item.szlcsc.com/datasheet/DW06D%252FJ/83278.html?spm=sc.it.pdf.fd___sc.gbn.xh1.zy.n&lcsc_vid=QgRWVldWE1dZAwECQFUMVgYHFFRdXlxWRlELVFQFTgMxVlNTT1hdUldfQ1JeXjsOAxUeFF5JWBYZEEoEHg8JSQcJGk4%3D
-

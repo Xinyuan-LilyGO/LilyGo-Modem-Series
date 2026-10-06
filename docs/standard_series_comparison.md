@@ -57,7 +57,12 @@ All Standard series products share the following features:
 | Solar Input Voltage          | 5V ~ 6V       |
 | Max Charging Current         | 500mA         |
 | Battery Voltage              | 3.7V          |
+| Battery Type                 | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
 | Battery Holder Voltage Range | 3.4V ~ 4.3V   |
+
+> \[!IMPORTANT]
+>
+> Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in these devices. These devices support only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
 
 ### Connectors
 - JST 2.0mm Solar Interface

@@ -139,8 +139,14 @@
 | ⚡Solar Input Voltage            | 5~6V    |
 | ⚡USB-C/Solar Charge Max Current | 500mA   |
 | 🔋Battery Voltage                | 3.7V    |
+| 🔋Battery Type                   | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
 | 📍**VBUS** ( Pin header)         | 5V      |
 | 📍**VBAT** ( Pin header)         | 4.2V    |
+
+> \[!IMPORTANT]
+>
+> Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
+>
 
 > \[!TIP]
 >

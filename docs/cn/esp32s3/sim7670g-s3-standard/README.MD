@@ -172,9 +172,15 @@ The power-on sequence is: power on all cameras -> power off all cameras -> delay
 | ⚡太阳能输入电压            | 5 ~ 6V    |
 | ⚡USB-C/太阳能充电最大电流 | 500mA     |
 | 🔋电池电压                | 3.7V      |
+| 🔋电池类型                | 仅限单节可充电锂离子/锂聚合物（Li-ion/LiPo）电池（充满电压 4.2 V） |
 | 🔋Battery socket voltage range   | 3.4~4.3V  |
 | 📍**VBUS** ( 排针)         | 5V        |
 | 📍**VBAT** ( 排针)         | 4.2V      |
+
+> \[!IMPORTANT]
+>
+> 请勿在本设备中使用或充电磷酸铁锂（LiFePO4）电池，或任何充满电压不是 4.2 V 的电池；本设备仅支持充满电压为 4.2 V 的单节可充电锂离子/锂聚合物电池。
+>
 
 * 电池供电的最低电压取决于电池的放电能力。使用稳压器测试的最低供电电压可低至 2.7V（由于稳压器的低压稳定性）
 * VBUS 引脚与 USB-C 端口在同一条线上。连接 USB-C 时，VBUS 引脚也会有电压。VBUS 引脚只能用于外部电源输入，不会向外供电。
