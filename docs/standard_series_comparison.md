@@ -22,13 +22,13 @@ The Standard series are cellular IoT development boards based on ESP32-S3, featu
 
 ## Standard Series Product List
 
-| Product Model          | Cellular Module | Deep Sleep Current |
-| ---------------------- | --------------- | ------------------ |
-| T-A7670X-S3-Standard   | A7670X          | 314uA              |
-| T-SIM7670G-S3-Standard | SIM7670G        | 147uA              |
-| T-SIM7000G-S3-Standard | SIM7000G        | 166uA              |
-| T-SIM7080G-S3-Standard | SIM7080G        | 128uA              |
-| T-SIM7600G-S3-Standard | SIM7600G-H R2   | 128uA              |
+| Product Model          | Cellular Module |
+| ---------------------- | --------------- |
+| T-A7670X-S3-Standard   | A7670X          |
+| T-SIM7670G-S3-Standard | SIM7670G        |
+| T-SIM7000G-S3-Standard | SIM7000G        |
+| T-SIM7080G-S3-Standard | SIM7080G        |
+| T-SIM7600G-S3-Standard | SIM7600G-H R2   |
 
 ## Common Features
 
@@ -50,15 +50,15 @@ All Standard series products share the following features:
 - ✅ Onboard 2W (4 ohms) audio amplifier (A7670X series)
 
 ### Electrical Parameters
-| Parameter                    | Specification |
-| ---------------------------- | ------------- |
-| USB-C Input Voltage          | 4.5V ~ 5.5V   |
-| VBUS Pin Input Voltage       | 4.5V ~ 5.5V   |
-| Solar Input Voltage          | 5V ~ 6V       |
-| Max Charging Current         | 500mA         |
-| Battery Voltage              | 3.7V          |
+| Parameter                    | Specification                                            |
+| ---------------------------- | -------------------------------------------------------- |
+| USB-C Input Voltage          | 4.5V ~ 5.5V                                              |
+| VBUS Pin Input Voltage       | 4.5V ~ 5.5V                                              |
+| Solar Input Voltage          | 5V ~ 6V                                                  |
+| Max Charging Current         | 500mA                                                    |
+| Battery Voltage              | 3.7V                                                     |
 | Battery Type                 | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
-| Battery Holder Voltage Range | 3.4V ~ 4.3V   |
+| Battery Holder Voltage Range | 3.4V ~ 4.3V                                              |
 
 > \[!IMPORTANT]
 >

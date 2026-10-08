@@ -33,7 +33,7 @@
     <td style="padding: 10px 20px; width: 33.33%; border: 0; background: transparent;">
       <a href="./docs/en/esp32/a7670-esp32/README.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/Q334-T-A7670E-ESP32.png" alt="T-A7670X-ESP32" width="200" style="border: 0;"/>
-        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-A7670X Quick Start</div>
+        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">Q334,Q195,Q380,Q335</br>Q425,Q196,Q436</br>T-A7670X Quick Start</div>
       </a>
     </td>
     <!-- T-A7608X -->
@@ -105,14 +105,14 @@
     <td style="padding: 10px 20px; width: 33.33%; border: 0; background: transparent;">
       <a href="./docs/en/esp32s3/a7608x-s3/README.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/H694-T-A7608-S3.png" alt="T-A7608-S3" width="200" style="border: 0;"/>
-        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-A7608X-ESP32S3 Quick Start</div>
+        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">H657,H694</br>T-A7608X-ESP32S3 Quick Start</div>
       </a>
     </td>
     <!-- T-SIM7670G-ESP32S3 -->
     <td style="padding: 10px 20px; width: 33.33%; border: 0; background: transparent;">
       <a href="./docs/en/esp32s3/sim7670g-s3/README.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/H707-T-SIM7670G-ESP32S3.png" alt="T-SIM7670G-ESP32S3" width="200" style="border: 0;"/>
-        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-SIM7670G-ESP32S3 Quick Start</div>
+        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">H707</br>T-SIM7670G-ESP32S3 Quick Start</div>
       </a>
     </td>
     <!-- T-Eth-Elite-ESP32S3 -->
@@ -134,21 +134,21 @@
     <td style="padding: 10px 20px; width: 33.33%; border: 0; background: transparent;">
       <a href="./docs/en/esp32s3/a7670x-s3-standard/README.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/H799-01-T-A7670X-S3-Standard.png" alt="T-A7670X-S3-Standard" width="200" style="border: 0;"/>
-        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-A7670X-S3-Standard Quick Start</div>
+        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">H799,H799-01,H799</br>H800,H800-01,H801,H801-1</br>T-A7670X-S3-Standard Quick Start</div>
       </a>
     </td>
     <!-- T-SIM7670G-S3-Standard -->
     <td style="padding: 10px 20px; width: 33.33%; border: 0; background: transparent;">
       <a href="./docs/en/esp32s3/sim7670g-s3-standard/README.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/H802-T-SIM7670G-S3-Standard.png" alt="T-SIM7670G-S3-Standard" width="200" style="border: 0;"/>
-        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-SIM7670G-S3-Standard Quick Start</div>
+        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">H802</br>T-SIM7670G-S3-Standard Quick Start</div>
       </a>
     </td>
     <!-- T-SIM7000G-S3-Standard -->
     <td style="padding: 10px 20px; width: 33.33%; border: 0; background: transparent;">
       <a href="./docs/en/esp32s3/sim7000g-s3-standard/README.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/H794-T-SIM7000G-S3-Standard.png" alt="T-SIM7000G-S3-Standard" width="200" style="border: 0;"/>
-        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-SIM7000G-S3-Standard Quick Start</div>
+        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">H794</br>T-SIM7000G-S3-Standard Quick Start</div>
       </a>
     </td>
   </tr>
@@ -160,14 +160,14 @@
     <td style="padding: 10px 20px; width: 50%; border: 0; background: transparent;">
       <a href="./docs/en/esp32s3/sim7080-s3-standard/README.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/H795T-SIM7080G-S3-Standard.png" alt="T-SIM7080G-S3-Standard" width="200" style="border: 0;"/>
-        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-SIM7080G-S3-Standard Quick Start</div>
+        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">H795</br>T-SIM7080G-S3-Standard Quick Start</div>
       </a>
     </td>
     <!-- T-SIM7600G-S3-Standard -->
     <td style="padding: 10px 20px; width: 50%; border: 0; background: transparent;">
       <a href="./docs/en/esp32s3/sim7600g-s3-standard/README.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/H803-T-SIM7600G-S3-Standard.png" alt="T-SIM7600G-S3-Standard" width="200" style="border: 0;"/>
-        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-SIM7600G-S3-Standard Quick Start</div>
+        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">H803</br>T-SIM7600G-S3-Standard Quick Start</div>
       </a>
     </td>
   </tr>
