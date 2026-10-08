@@ -89,6 +89,12 @@
 
 ------------------------
 
+### A7682E
+
+* 🆕[A011B18A7682M7](https://drive.google.com/file/d/1D7R7yAtRTA0wkWouIRv8wSztfV5Bj-D9/view?usp=sharing)
+
+------------------------
+
 ### SIM7670G-MNGV
 
 See [LilyGo SIM7670G Upgrade Guide](./en/upgrade/sim7670g/sim7670g_upgrade.md)

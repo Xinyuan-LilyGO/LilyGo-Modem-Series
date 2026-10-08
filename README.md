@@ -234,7 +234,7 @@
 
 ## Modem firmware Upgrade Guide
 
-- 🔧 **[A7670/A7608 Upgrade Guide](./docs/update_fw.md)**
+- 🔧 **[A7670/A7608/A7682X Upgrade Guide](./docs/update_fw.md)**
 - 🔧 **[SIM7670G Upgrade Guide](./docs/en/upgrade/sim7670g/sim7670g_upgrade.md)**
 - 🔧 **[SIM7000G Upgrade Guide](./docs/en/esp32/sim7000-esp32/upgrade/sim7000_upgrade.md)**
 - 🔧 **[SIM7080G Upgrade Guide](./docs/en/esp32s3/sim7080-s3-standard/upgrade/README.MD)**

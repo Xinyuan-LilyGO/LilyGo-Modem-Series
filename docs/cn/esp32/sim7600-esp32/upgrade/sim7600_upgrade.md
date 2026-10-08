@@ -23,17 +23,21 @@
 
 ##### SIM7600G-H
 
-* [PN:S2-1097D-Z307J](https://drive.google.com/file/d/11RRi8oIJKkH_XrOYSVGDl4XojPs5zYOM/view?usp=sharing)
-* [PN:S2-1097D-Z31E3](https://drive.google.com/drive/folders/11YthuETFAIiLzhQ2mxGtca27JOckc2oP?usp=sharing)
-* [PN:S2-1097C-Z31FP](https://drive.google.com/drive/folders/11pfGCjkZFXo1AnTbNawqvSGudWjKn_26?usp=sharing)
-* [PN:S2-1097D-Z32DY LE20B05SIM7600G22](https://drive.google.com/file/d/12BMSSGPISMhFEDvG7C9s34YvWg5PDNNb/view?usp=sharing)
-* [PN:S2-1097D-Z32DY LE20B05SIM7600G22_240828 最新](https://drive.google.com/file/d/1pNI1-kF8lnb8IUgjqwBE5iY18hNYFuKA/view?usp=sharing)
-* [PN:S2-107EQ-Z30LC](https://drive.google.com/file/d/12qAtFyZo5jR1xwohpejrqwjh5R_a6uY0/view?usp=sharing)
+* [LE20B04SIM7600G22](https://drive.google.com/file/d/11_gPJxy2CcXCrJPNfeUXDacKbT5_-F_F/view?usp=sharing)
+* [LE20B05SIM7600G22](https://drive.google.com/file/d/12BMSSGPISMhFEDvG7C9s34YvWg5PDNNb/view?usp=sharing)
+* 🆕[LE20B06SIM7600G22](https://drive.google.com/file/d/1MLpxBzHmjrrZPA_1t-G_S4TTTWm4NLD-/view?usp=sharing)
 
 ###### SIM7600E-H
 
-* [PN:S2-107EQ-Z30LC](https://drive.google.com/file/d/1kHsw8LXSm2FYmcSWsaYiS7G8vvF9q2No/view?usp=sharing)
-* [PN:S2-107EQ-Z30AN](https://drive.google.com/file/d/1kHsw8LXSm2FYmcSWsaYiS7G8vvF9q2No/view?usp=sharing)
+* **Suitable for modems with the prefix PN: S2-107EQ-XXXXX**
+
+* 🆕[LE11B14SIM7600M22](https://drive.google.com/file/d/1kHsw8LXSm2FYmcSWsaYiS7G8vvF9q2No/view?usp=sharing)
+
+###### SIM7600E-L1C
+
+* **Suitable for modems with the prefix PN: S2-10A9C-XXXXX**
+
+* 🆕[LE20CB03SIM7600M11](https://drive.google.com/file/d/1huASLR3t2F_hZx7m92I-onnwKCmGh8fU/view?usp=sharing)
 
 #### 2. 将 USB 输入切换到调制解调器
 
