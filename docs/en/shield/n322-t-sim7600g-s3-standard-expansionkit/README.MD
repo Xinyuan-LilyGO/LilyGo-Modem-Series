@@ -41,6 +41,7 @@
 
 - [PlayModemSDMusic](../../../../examples/ModemPlayMusicFromSD/ModemPlayMusicFromSD.ino)
 - [RecordAndPlay](../../../../examples/ModemRecordPlayback/ModemRecordPlayback.ino)
+- [ModemAudioKitAllInOne](../../../../examples/ModemAudioKitAllInOne/ModemAudioKitAllInOne.ino)
 
 ## AT Command datasheet
 
