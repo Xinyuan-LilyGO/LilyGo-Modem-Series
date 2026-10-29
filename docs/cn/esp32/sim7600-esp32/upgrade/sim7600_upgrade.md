@@ -16,7 +16,7 @@
 #### 1. 下载驱动和工具
 
 * [Windows USB 驱动](https://drive.google.com/file/d/1WhHny4E-43DxUfifMkrX752oFBx7O70D/view?usp=sharing)
-* [升级固件工具](https://drive.google.com/file/d/1f02TTNoyirFPGWbob1khy9dnoBonoVe7/view?usp=sharing)
+* [升级固件工具](https://drive.google.com/file/d/1nOqJuzBgE8KrMkpQUAWy3nJwqEBVABVn/view?usp=sharing)
 * [升级录制视频](https://youtu.be/7cJzjfcrFWY)
 
 **刷写的固件版本必须与调制解调器的 PN 编号一致，否则将变砖。**

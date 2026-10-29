@@ -14,7 +14,7 @@
 #### 1. Download Driver & Tools
 
 * [Windows USB Drivers](https://drive.google.com/file/d/1WhHny4E-43DxUfifMkrX752oFBx7O70D/view?usp=sharing)
-* [Upgrade Firmware tools](https://drive.google.com/file/d/1f02TTNoyirFPGWbob1khy9dnoBonoVe7/view?usp=sharing)
+* [Upgrade Firmware tools](https://drive.google.com/file/d/1nOqJuzBgE8KrMkpQUAWy3nJwqEBVABVn/view?usp=sharing)
 * [Upgrade recording video](https://youtu.be/7cJzjfcrFWY)
 
 **The firmware version flashed must be consistent with the PN number of the modem, otherwise it will become a brick.**
