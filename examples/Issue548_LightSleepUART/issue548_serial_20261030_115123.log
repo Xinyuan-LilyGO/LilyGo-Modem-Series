@@ -1,0 +1,186 @@
+# Issue 548 serial run
+# port=COM248 baud=115200 cycles=3
+# started=2026-10-30T11:51:23
+ets Jul 29 2019 12:21:46
+
+
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+
+configsip: 0, SPIWP:0xee
+
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+
+mode:DIO, clock div:2
+
+load:0x3fff0030,len:1184
+
+load:0x40078000,len:13232
+
+load:0x40080400,len:3028
+
+entry 0x400805e4
+
+READY: LilyGo-SIM7600X ESP32 Version; pins RX=26 TX=27 DTR=32 RI=33 baud=115200 rxbuf=8192 fifo_threshold=112 ISR_IRAM=0
+AT AT => AT
+
+
+OK
+
+MODEM_READY=1
+AT AT+CSCLK=0 => AT+CSCLK=0
+
+
+OK
+
+Commands: r=create file, b=baseline, l=light sleep diagnostic
+
+CREATE FAIL
+AT AT+CSCLK=0 => AT+CSCLK=0
+
+
+OK
+
+--- BASELINE ---
+WINDOW 0 PASS (512 bytes)
+DIAG window=0 rx=595 first_us=7279 max_gap_us=37502 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 512 PASS (512 bytes)
+DIAG window=512 rx=597 first_us=7671 max_gap_us=37536 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 1024 PASS (512 bytes)
+DIAG window=1024 rx=598 first_us=8719 max_gap_us=37569 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 1536 PASS (512 bytes)
+DIAG window=1536 rx=598 first_us=7858 max_gap_us=37569 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 2048 PASS (512 bytes)
+DIAG window=2048 rx=598 first_us=7858 max_gap_us=36925 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 2560 PASS (512 bytes)
+DIAG window=2560 rx=598 first_us=7860 max_gap_us=37574 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 3072 PASS (512 bytes)
+DIAG window=3072 rx=598 first_us=8766 max_gap_us=37534 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 3584 PASS (512 bytes)
+DIAG window=3584 rx=598 first_us=7862 max_gap_us=37580 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+BASELINE PASS
+AT AT+CSCLK=1 => AT+CSCLK=1
+
+
+OK
+
+DTR HIGH; waiting 25000 ms before ESP32 light sleep
+ESP32 woke; restoring UART and modem UART sleep state
+
+AT AT => AT
+
+
+OK
+
+AT AT+CATR=1 => AT+CATR=1
+
+
+OK
+
+AT AT+CSCLK=0 => AT+CSCLK=0
+
+
+OK
+
+--- LIGHT_SLEEP ---
+WINDOW 0 PASS (512 bytes)
+DIAG window=0 rx=595 first_us=7370 max_gap_us=37546 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 512 PASS (512 bytes)
+DIAG window=512 rx=597 first_us=7781 max_gap_us=37586 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 1024 PASS (512 bytes)
+DIAG window=1024 rx=598 first_us=8001 max_gap_us=37558 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 1536 PASS (512 bytes)
+DIAG window=1536 rx=598 first_us=8001 max_gap_us=36693 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 2048 PASS (512 bytes)
+DIAG window=2048 rx=598 first_us=8574 max_gap_us=36781 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 2560 PASS (512 bytes)
+DIAG window=2560 rx=598 first_us=7862 max_gap_us=36634 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 3072 PASS (512 bytes)
+DIAG window=3072 rx=598 first_us=8635 max_gap_us=37555 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 3584 PASS (512 bytes)
+DIAG window=3584 rx=598 first_us=7861 max_gap_us=37556 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+LIGHT_SLEEP PASS
+AT AT+CSCLK=1 => AT+CSCLK=1
+
+
+OK
+
+DTR HIGH; waiting 25000 ms before ESP32 light sleep
+ESP32 woke; restoring UART and modem UART sleep state
+
+AT AT => AT
+
+
+OK
+
+AT AT+CATR=1 => AT+CATR=1
+
+
+OK
+
+AT AT+CSCLK=0 => AT+CSCLK=0
+
+
+OK
+
+--- LIGHT_SLEEP ---
+WINDOW 0 PASS (512 bytes)
+DIAG window=0 rx=595 first_us=7369 max_gap_us=36713 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 512 PASS (512 bytes)
+DIAG window=512 rx=597 first_us=8536 max_gap_us=36656 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 1024 PASS (512 bytes)
+DIAG window=1024 rx=598 first_us=8614 max_gap_us=36780 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 1536 PASS (512 bytes)
+DIAG window=1536 rx=598 first_us=7862 max_gap_us=36771 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 2048 PASS (512 bytes)
+DIAG window=2048 rx=598 first_us=7864 max_gap_us=37555 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 2560 PASS (512 bytes)
+DIAG window=2560 rx=598 first_us=7862 max_gap_us=36848 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 3072 PASS (512 bytes)
+DIAG window=3072 rx=598 first_us=7859 max_gap_us=37550 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 3584 PASS (512 bytes)
+DIAG window=3584 rx=598 first_us=7860 max_gap_us=37549 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+LIGHT_SLEEP PASS
+AT AT+CSCLK=1 => AT+CSCLK=1
+
+
+OK
+
+DTR HIGH; waiting 25000 ms before ESP32 light sleep
+ESP32 woke; restoring UART and modem UART sleep state
+
+AT AT => AT
+
+
+OK
+
+AT AT+CATR=1 => AT+CATR=1
+
+
+OK
+
+AT AT+CSCLK=0 => AT+CSCLK=0
+
+
+OK
+
+--- LIGHT_SLEEP ---
+WINDOW 0 PASS (512 bytes)
+DIAG window=0 rx=595 first_us=8276 max_gap_us=36713 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 512 PASS (512 bytes)
+DIAG window=512 rx=597 first_us=8537 max_gap_us=37569 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 1024 PASS (512 bytes)
+DIAG window=1024 rx=598 first_us=7793 max_gap_us=37589 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 1536 PASS (512 bytes)
+DIAG window=1536 rx=598 first_us=7861 max_gap_us=37535 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 2048 PASS (512 bytes)
+DIAG window=2048 rx=598 first_us=7864 max_gap_us=37572 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 2560 PASS (512 bytes)
+DIAG window=2560 rx=598 first_us=7859 max_gap_us=36658 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 3072 PASS (512 bytes)
+DIAG window=3072 rx=598 first_us=8610 max_gap_us=37570 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+WINDOW 3584 PASS (512 bytes)
+DIAG window=3584 rx=598 first_us=7863 max_gap_us=36803 fifo_ovf=0 buffer_full=0 frame=0 parity=0
+LIGHT_SLEEP PASS
+
+# finished=2026-10-30T11:54:15
