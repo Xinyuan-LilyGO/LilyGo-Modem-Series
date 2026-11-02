@@ -24,9 +24,9 @@
 
 ### Modem differences
 
-| Model    | GPS | Phone Call | SMS | Frequency band                                                                                         |
-| -------- | --- | ---------- | --- | ------------------------------------------------------------------------------------------------------ |
-| SIM7670G | ✅   | ❌          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B12/B13/B18/B19/B20/B25/B26/B28/B66/B71 LTE-TDD:B34/B38/B39/B40/B41 GSM:❌ |
+| SKU  | Model    | GPS | Phone Call | SMS | Frequency band                                                                                         |
+| ---- | -------- | --- | ---------- | --- | ------------------------------------------------------------------------------------------------------ |
+| H802 | SIM7670G | ✅   | ❌          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B12/B13/B18/B19/B20/B25/B26/B28/B66/B71 LTE-TDD:B34/B38/B39/B40/B41 GSM:❌ |
 
 * SMS: `SIM7670G-MNGV 2374B04` version supports SMS function,but it requires the operator base station to support SMS Over SGS service to send, otherwise it will be invalid
 
@@ -166,17 +166,17 @@ The power-on sequence is: power on all cameras -> power off all cameras -> delay
 
 ### ⚡ Electrical parameters
 
-| Features                        | Details   |
-| ------------------------------- | --------- |
-| 🔗USB-C input voltage range      | 4.5V~5.5V |
-| 🔗VBUS Pin input voltage range   | 4.5V~5.5V |
-| ⚡Solar Input Voltage            | 5 ~ 6V    |
-| ⚡USB-C/Solar Charge Max Current | 500mA     |
-| 🔋Battery Voltage                | 3.7V      |
+| Features                        | Details                                                  |
+| ------------------------------- | -------------------------------------------------------- |
+| 🔗USB-C input voltage range      | 4.5V~5.5V                                                |
+| 🔗VBUS Pin input voltage range   | 4.5V~5.5V                                                |
+| ⚡Solar Input Voltage            | 5 ~ 6V                                                   |
+| ⚡USB-C/Solar Charge Max Current | 500mA                                                    |
+| 🔋Battery Voltage                | 3.7V                                                     |
 | 🔋Battery Type                   | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
-| 🔋Battery socket voltage range   | 3.4~4.3V  |
-| 📍**VBUS** ( Pin header)         | 5V        |
-| 📍**VBAT** ( Pin header)         | 4.2V      |
+| 🔋Battery socket voltage range   | 3.4~4.3V                                                 |
+| 📍**VBUS** ( Pin header)         | 5V                                                       |
+| 📍**VBAT** ( Pin header)         | 4.2V                                                     |
 
 > \[!IMPORTANT]
 >

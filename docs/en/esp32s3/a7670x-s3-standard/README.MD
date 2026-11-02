@@ -24,29 +24,35 @@
 
 ### Modem differences
 
-| Model        | GPS | Phone Call | SMS | Frequency band                                                                              |
-| ------------ | --- | ---------- | --- | ------------------------------------------------------------------------------------------- |
-| A7670E-FASE  | ✅   | ✅          | ✅   | LTE-FDD:B1/B3/B5/B7/B8/B20  GSM:900/1800                                                    |
-| A7670E-LASE  | ❌   | ✅          | ✅   | LTE-FDD:B1/B3/B5/B7/B8/B20  GSM:900/1800                                                    |
-| A7670SA-FASE | ✅   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                 |
-| A7670SA-LASE | ❌   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                 |
-| A7670G-LLSE  | ❌   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B20/B28/B66  LTE-TDD:B34/B38/B39/B40/B41 GSM:850/900/1800/1900 |
+| SKU     | Model           | Built-in GPS | External GPS      | Phone Call | SMS                                                                                                                | Frequency band                                                                              |
+| ------- | --------------- | ------------ | ----------------- | ---------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| H800    | A7670E-FASE     | ✅            | ❌                 | ✅          | ✅                                                                                                                  | LTE-FDD:B1/B3/B5/B7/B8/B20  GSM:900/1800                                                    |
+| H800-01 | A7670E-LASE     | ❌            | ❌                 | ✅          | ✅                                                                                                                  | LTE-FDD:B1/B3/B5/B7/B8/B20  GSM:900/1800                                                    |
+| H801    | A7670SA-FASE    | ✅            | ❌                 | ✅          | ✅                                                                                                                  | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                 |
+| H801-01 | A7670SA-LASE    | ❌            | ❌                 | ✅          | ✅                                                                                                                  | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                 |
+| H799    | A7670G-LLSE     | ❌            | [Quectel L76K][2] | ✅          | ✅                                                                                                                  | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B20/B28/B66  LTE-TDD:B34/B38/B39/B40/B41 GSM:850/900/1800/1900 |
+| H799-01 | A7670G-LLSE     | ❌            | ❌                 | ✅          | ✅                                                                                                                  | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B20/B28/B66  LTE-TDD:B34/B38/B39/B40/B41 GSM:850/900/1800/1900 |
+| <!--    | A7670E-LNXY-UBL | ❌            | ❌                 | ❌          | LTE-FDD:B1/B3/B5/B7/B8/B20                                                                                         | -->                                                                                         |
+| <!--    | A7670E-LNMV     | ❌            | ❌                 | ❌          | LTE-FDD:B1/B3/B5/B7/B8/B20                                                                                         | -->                                                                                         |
+| <!--    | A7670SA-LASC    | ❌            | ✅                 | ✅          | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                                        | -->                                                                                         |
+| <!--    | A7670G-LABE     | ❌            | ✅                 | ✅          | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B12/B13/B18/B19/B20/B25/B26/B28/B66 LTE-TDD:B34/B38/B39/B40/B41 GSM:850/900/1800/1900 | -->                                                                                         |
 
-<!-- | A7670E-LNXY-UBL | ❌   | ❌          | ❌   | LTE-FDD:B1/B3/B5/B7/B8/B20                                                                                         | -->
-<!-- | A7670E-LNMV     | ❌   | ❌          | ❌   | LTE-FDD:B1/B3/B5/B7/B8/B20                                                                                         | -->
-<!-- | A7670SA-LASC    | ❌   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                                        | -->
-<!-- | A7670G-LABE     | ❌   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B12/B13/B18/B19/B20/B25/B26/B28/B66 LTE-TDD:B34/B38/B39/B40/B41 GSM:850/900/1800/1900 | -->
+> [!TIP]
+>
+> The T-A7670X-S3-Standard series does not use the `A7670E-LNXY-UBL` modem version.
+>
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 > How to check the specific model version of the modem? Sending AT+SIMCOMATI can return the firmware version and hardware version used.
 >
 > Please note that whether the GNSS IPEX antenna connector is on the PCB or not depends on the actual modem version. The A7670G modem does not have internal GPS functionality, regardless of whether GPS is included in your order. If you purchased the A7670G with GPS, you will need to use an external GPS module.
-> A7670G+GPS orders use an external GPS module and can only use [S3_StandardSeries_External_GPS_Shield Example](../../../../examples/S3_StandardSeries_External_GPS_Shield/S3_StandardSeries_External_GPS_Shield.ino). Other GPS examples cannot be used.
-> 
+> A7670G+GPS(SKU:H799) orders use an external GPS module and can only use [S3_StandardSeries_External_GPS_Shield Example](../../../../examples/S3_StandardSeries_External_GPS_Shield/S3_StandardSeries_External_GPS_Shield.ino). Other GPS examples cannot be used.
+>
 > The image below clearly shows that if a GPS module is included on the side, then it's a version with an external GPS module.
 
 <img src="../../../../images/product/png/H799-01-T-A7670X-S3-Standard-GPS.png" alt="T-A7670X-S3-Standard-GPS" width="320" style="border: 0;"/>
 
+[2]: https://www.quectel.com.cn/product/gnss-l76k "L76K"
 
 ### PlatformIO Quick Start
 
@@ -104,7 +110,7 @@
 
 7. Upload sketch
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 >
 > 1. Unable to upload any code? Please see the FAQ below
 > 2. When opening the Arduino IDE, you will be prompted that there are new libraries that can be updated. Please do not click update. There is no guarantee that it can be compiled, run, etc. after the update. Make sure that the board is running normally before deciding whether to update. You have to Know that problems may occur after updating due to library differences, or the default configuration (such as TinyGSM) will be overwritten.
@@ -151,7 +157,7 @@
 | Default SDA       | 3                    | ✅️    |
 | Default SCL       | 2                    | ✅️    |
 
-> \[!TIP]
+> [!TIP]
 >
 > [ESP32-S3 Consolidated Pin Overview](https://documentation.espressif.com/esp32-s3_datasheet_en.pdf)
 >
@@ -162,12 +168,12 @@
 > IO0/IO3/IO45/IO46 are Strapping Pins; their use is limited. Please see the **Strapping Pins** section of the [online documentation](https://documentation.espressif.com/esp32-s3_datasheet_en.pdf) for details.
 >
 
-| A7670G + L76K GPS Version Pin Maps   | GPIO |
-| ------------------------------------ | ---- |
-| GNSS WakeUp(A7670G-GPS Version Only) | 0    |
-| GPS RX                               | 48   |
-| GPS TX                               | 45   |
-| GPS PPS                              | 17   |
+| A7670G + L76K(H799) GPS Version Pin Maps | GPIO |
+| ---------------------------------------- | ---- |
+| GNSS WakeUp(A7670G-GPS Version Only)     | 0    |
+| GPS RX                                   | 48   |
+| GPS TX                                   | 45   |
+| GPS PPS                                  | 17   |
 
 * A7670G does not have GNSS functionality. If you purchase the version with GPS functionality, it's an external GPS version. The GPS pin is the same as the modem GNSS pin, except it also has a wakeup pin.
 * **GNSS WakeUp** : Low level enters Standby mode, high level enters operating mode.
@@ -186,7 +192,7 @@
 * The `Power Save Mode pin` is used to set the power capability of the power supply. Setting it to HIGH enables maximum power output. Setting it to LOW reduces current consumption.
 * If a camera is connected externally, there will be no free GPIO. If the camera is not used, the camera's GPIO can be used for other purposes.
 * `SDA`, `SCL` can only be used as I2C function, not as other functions
-* `GPS Shield Wakeup Pin` is only used when an external GPS module is connected. Otherwise, it is idle. It is not recommended to use this GPIO. This IO is connected only when using `A7670G + L76K GPS`, otherwise it is not connected
+* `GPS Shield Wakeup Pin` is only used when an external GPS module is connected. Otherwise, it is idle. It is not recommended to use this GPIO. This IO is connected only when using `A7670G + L76K GPS(H799)`, otherwise it is not connected
 * The camera must be powered on to be detected, otherwise the camera cannot be used. For how to turn it on, please refer to the Camera example.
 * Modem RTS/Modem CTS are not connected by default. They are connected to the GPS RX/TX of the Modem by default. If you need to use them, you need to short-circuit the RTS/CTS short-circuit pads on the back of the PCB, and then separate the GPS TX and RX pads.
 * `Camera RESET` : To maximize GPIO usage, no GPIO is assigned to the camera reset pin, so a power cycle is used to reset the camera.
@@ -197,19 +203,19 @@ The power-on sequence is: power on all cameras -> power off all cameras -> delay
 
 ### ⚡ Electrical parameters
 
-| Features                        | Details   |
-| ------------------------------- | --------- |
-| 🔗USB-C input voltage range      | 4.5V~5.5V |
-| 🔗VBUS Pin input voltage range   | 4.5V~5.5V |
-| ⚡Solar Input Voltage            | 5 ~ 6V    |
-| ⚡USB-C/Solar Charge Max Current | 500mA     |
-| 🔋Battery Voltage                | 3.7V      |
+| Features                        | Details                                                  |
+| ------------------------------- | -------------------------------------------------------- |
+| 🔗USB-C input voltage range      | 4.5V~5.5V                                                |
+| 🔗VBUS Pin input voltage range   | 4.5V~5.5V                                                |
+| ⚡Solar Input Voltage            | 5 ~ 6V                                                   |
+| ⚡USB-C/Solar Charge Max Current | 500mA                                                    |
+| 🔋Battery Voltage                | 3.7V                                                     |
 | 🔋Battery Type                   | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
-| 🔋Battery socket voltage range   | 3.4~4.3V  |
-| 📍**VBUS** ( Pin header)         | 5V        |
-| 📍**VBAT** ( Pin header)         | 4.2V      |
+| 🔋Battery socket voltage range   | 3.4~4.3V                                                 |
+| 📍**VBUS** ( Pin header)         | 5V                                                       |
+| 📍**VBAT** ( Pin header)         | 4.2V                                                     |
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 >
 > Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
 >
@@ -217,7 +223,7 @@ The power-on sequence is: power on all cameras -> power off all cameras -> delay
 * The minimum voltage of battery power supply depends on the discharge capacity of the battery. The minimum power supply voltage test using a voltage regulator can be as low as 2.7V (due to the low voltage stability of the voltage regulator)
 * The VBUS pin is on the same line as the USB-C port. When connected to USB-C, the VBUS pin will also have voltage. The VBUS pin can only be used for external power input and will not provide power to the outside.
 
-> \[!TIP]
+> [!TIP]
 >
 > 1. The onboard JST2.0 interface is only used to connect the solar panel to charge the battery, and cannot provide power to the board from this interface
 > 2. It is recommended to use a solar panel with an output voltage of 6V or 5V and a power of about 5-10W. Solar energy can only charge the battery. Without the battery, the panel cannot supply power.
@@ -239,7 +245,7 @@ The power-on sequence is: power on all cameras -> power off all cameras -> delay
 | Over-Discharge Current  | 4.6A     |
 | Short-Circuit Current   | 2 × 4.6A |
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 > Please note that the development board will not power on when connected to an 18650 battery. To activate battery power, you can use the following method to activate the BMS.
 >
 > Method: Plug into the USB-C port labeled ESP-USB. Please note that the Modem-USB port will not power or charge the development board.
