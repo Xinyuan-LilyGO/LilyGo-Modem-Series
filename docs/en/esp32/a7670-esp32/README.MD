@@ -26,28 +26,31 @@
 
 ### Modem differences
 
-| Model           | GPS | Phone Call | SMS | Frequency band                                                                              | Note                 |
-| --------------- | --- | ---------- | --- | ------------------------------------------------------------------------------------------- | -------------------- |
-| A7670E-FASE     | ✅   | ✅          | ✅   | LTE-FDD:B1/B3/B5/B7/B8/B20  GSM:900/1800                                                    | GPS Version          |
-| A7670E-LASE     | ❌   | ✅          | ✅   | LTE-FDD:B1/B3/B5/B7/B8/B20  GSM:900/1800                                                    | With out GPS version |
-| A7670SA-FASE    | ✅   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                 | GPS Version          |
-| A7670SA-LASE    | ❌   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                 | With out GPS version |
-| A7670G-LLSE     | ❌   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B20/B28/B66  LTE-TDD:B34/B38/B39/B40/B41 GSM:850/900/1800/1900 | With out GPS version |
-| A7670E-LNXY-UBL | ❌   | ❌          | ❌   | LTE-FDD:B1/B3/B5/B7/B8/B20                                                                  | Only 4G Version      |
+| SKU  | Model           | Built-in GPS | External GPS      | Phone Call | SMS | Frequency band                                                                              | Note                 |
+| ---- | --------------- | ------------ | ----------------- | ---------- | --- | ------------------------------------------------------------------------------------------- |------ |
+| Q334 | A7670E-FASE     | ✅          | ❌                 | ✅          | ✅   | LTE-FDD:B1/B3/B5/B7/B8/B20  GSM:900/1800                                                    | GPS Version          |
+| Q195 | A7670E-LASE     | ❌          | ❌                 | ✅          | ✅   | LTE-FDD:B1/B3/B5/B7/B8/B20  GSM:900/1800                                                    | With out GPS version |
+| Q335 | A7670SA-FASE    | ✅          | ❌                 | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                 | GPS Version          |
+| Q196 | A7670SA-LASE    | ❌          | ❌                 | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                 | With out GPS version |
+| Q380 | A7670G-LLSE     | ❌          | ❌                 | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B20/B28/B66  LTE-TDD:B34/B38/B39/B40/B41 GSM:850/900/1800/1900 | With out GPS version |
+| Q425 | A7670G-LLSE     | ❌          | [Quectel L76K][2]   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B20/B28/B66  LTE-TDD:B34/B38/B39/B40/B41 GSM:850/900/1800/1900 | With out GPS version |
+| Q436 | A7670E-LNXY-UBL | ❌          | ❌                 | ❌          | ❌   | LTE-FDD:B1/B3/B5/B7/B8/B20                                                                  | Only 4G Version      |
 
 <!-- | A7670E-LNMV     | ❌   | ❌          | ❌   | LTE-FDD:B1/B3/B5/B7/B8/B20                                                                                         | -->
 <!-- | A7670G-LABE     | ❌   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B12/B13/B18/B19/B20/B25/B26/B28/B66 LTE-TDD:B34/B38/B39/B40/B41 GSM:850/900/1800/1900 | -->
 <!-- | A7670SA-LASC    | ❌   | ✅          | ✅   | LTE-FDD:B1/B2/B3/B4/B5/B7/B8/B28/B66  GSM:850/900/1800/1900                                                        | -->
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 > How to check the specific model version of the modem? Sending AT+SIMCOMATI can return the firmware version and hardware version used.
 >
 > Please note that whether the GNSS IPEX antenna connector is on the PCB or not depends on the actual modem version. The A7670G modem does not have internal GPS functionality, regardless of whether GPS is included in your order. If you purchased the A7670G with GPS, you will need to use an external GPS module.
-> A7670G+GPS orders use an external GPS module and can only use [ExternalGPS_A7670G_Only Example](../../../../examples/ExternalGPS_A7670G_Only/ExternalGPS_A7670G_Only.ino). Other GPS examples cannot be used.
+> A7670G+GPS(Q425) orders use an external GPS module and can only use [ExternalGPS_A7670G_Only Example](../../../../examples/ExternalGPS_A7670G_Only/ExternalGPS_A7670G_Only.ino). Other GPS examples cannot be used.
 > 
 > The image below clearly shows that if a GPS module is included on the side, then it's a version with an external GPS module.
 
 <img src="../../../../images/product/png/Q425-T-A7670G-GPS-ESP32.png" alt="T-A7670X-ESP32" width="300" style="border: 0;"/>
+
+[2]: https://www.quectel.com.cn/product/gnss-l76k "L76K"
 
 ### PlatformIO Quick Start
 
@@ -111,7 +114,7 @@
 
 8. Upload sketch
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 >
 > 1. Do not use USB-C to USB-C to power the motherboard. Please use USB-A to USB-C to power the motherboard. The USB-C port on the Apple computer cannot directly power the motherboard.
 > 2. Unable to upload any code? Please see the FAQ below
@@ -148,7 +151,7 @@
 * **GNSS WakeUp** : Low level enters Standby mode, high level enters operating mode.
 * **GNSS PPS**: 1 pulse per second
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 > ESP32 version Since the SD card uses IO2 as CS, you cannot upload software in the Arduino IDE when you insert the SD card, so you must remove the SD card when uploading new code
 >
 > GPIO4(PWRKEY),GPIO26(TX),GPIO27(RX), is exposed on the header pins. Do not connect any wires to the GPIO4 position on the header pins; keep it unconnected.
@@ -158,22 +161,22 @@
 
 ### ⚡ Electrical parameters
 
-| Features                        | Details |
-| ------------------------------- | ------- |
-| 🔗USB-C Input Voltage            | 5V      |
-| ⚡Solar Input Voltage            | 5~6V    |
-| ⚡USB-C/Solar Charge Max Current | 500mA   |
-| 🔋Battery Voltage                | 3.7V    |
+| Features                        | Details                                                  |
+| ------------------------------- | -------------------------------------------------------- |
+| 🔗USB-C Input Voltage            | 5V                                                       |
+| ⚡Solar Input Voltage            | 5~6V                                                     |
+| ⚡USB-C/Solar Charge Max Current | 500mA                                                    |
+| 🔋Battery Voltage                | 3.7V                                                     |
 | 🔋Battery Type                   | Single-cell rechargeable Li-ion/LiPo (4.2 V full-charge) |
-| 📍**VBUS** ( Pin header)         | 5V      |
-| 📍**VBAT** ( Pin header)         | 4.2V    |
+| 📍**VBUS** ( Pin header)         | 5V                                                       |
+| 📍**VBAT** ( Pin header)         | 4.2V                                                     |
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 >
 > Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
 >
 
-> \[!TIP]
+> [!TIP]
 >
 > 1. The onboard JST2.0 interface is only used to connect the solar panel to charge the battery, and cannot provide power to the board from this interface
 > 2. It is recommended to use a solar panel with an output voltage of 6V or 5V and a power of about 5-10W. Solar energy can only charge the battery. Without the battery, the panel cannot supply power.
@@ -194,7 +197,7 @@
 | Over-Discharge Current  | 3A         |
 | ChipName                | [DW06D][2] |
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 >
 > The board may reset and restart the device when switching between USB and battery. This is normal, as the board does not have a seamless power switching solution.
 >
