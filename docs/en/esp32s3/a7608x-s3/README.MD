@@ -136,6 +136,8 @@
 >
 > Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
 >
+> The Solar interface and the USB-C port can both be present; the motherboard will prioritize the USB connection for power supply.
+>
 
 > \[!TIP]
 >

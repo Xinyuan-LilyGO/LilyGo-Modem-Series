@@ -221,6 +221,8 @@ The power-on sequence is: power on all cameras -> power off all cameras -> delay
 >
 > Do not use or charge LiFePO4 batteries, or any battery with a full-charge voltage other than 4.2 V, in this device. This device supports only single-cell rechargeable Li-ion/LiPo batteries with a 4.2 V full-charge voltage.
 >
+> The Solar interface and the USB-C port can both be present; the motherboard will prioritize the USB connection for power supply.
+>
 
 * The minimum voltage of battery power supply depends on the discharge capacity of the battery. The minimum power supply voltage test using a voltage regulator can be as low as 2.7V (due to the low voltage stability of the voltage regulator)
 * The VBUS pin is on the same line as the USB-C port. When connected to USB-C, the VBUS pin will also have voltage. The VBUS pin can only be used for external power input and will not provide power to the outside.

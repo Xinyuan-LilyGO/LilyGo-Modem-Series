@@ -171,7 +171,7 @@
 >
 > GPIO33 (Modem RI) is exposed on the header. Do not connect any wires to the GPIO33 position on the header; keep it disconnected.
 
-### ⚡ Electrical parameters
+### ⚡ 电气参数
 
 | 特性                        | 详情 |
 | ------------------------------- | ------- |
@@ -187,6 +187,8 @@
 >
 > 请勿在本设备中使用或充电磷酸铁锂（LiFePO4）电池，或任何充满电压不是 4.2 V 的电池；本设备仅支持充满电压为 4.2 V 的单节可充电锂离子/锂聚合物电池。
 >
+> Solar接口和USB-C两者可以同时存在.主板会优先选择USB端供电
+>
 
 > \[!TIP]
 >
@@ -200,7 +202,7 @@
 > 5. VBUS 引脚是除电池外唯一为开发板供电的接口；没有其他方式。
 > 6. USB/VBUS 引脚输入必须能够提供至少 2A 的峰值电流，且电压不得低于 5V，否则将触发低压自动关机。
 
-### ⚡Battery Protector Description
+### ⚡电池保护
 
 | 特性                | 详情    |
 | ----------------------- | ---------- |
