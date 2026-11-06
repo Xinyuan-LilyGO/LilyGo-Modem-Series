@@ -7,7 +7,7 @@
  * @note
  * * Example is suitable for A7670X/A7608X/SIM7670G/SIM7600 series
  * * TODO: SIM7000G To be fixed
- * * Connect MQTT Broker as https://test.mosquitto.org/  MQTT, encrypted, unauthenticated
+ * * Connect MQTT Broker as https://broker.emqx.io/  MQTT, encrypted, unauthenticated
  * * Example uses a forked TinyGSM <https://github.com/lewisxhe/TinyGSM>, which will not compile successfully using the mainline TinyGSM.
  */
 #define TINY_GSM_RX_BUFFER          1024 // Set RX buffer to 1Kb
@@ -42,7 +42,7 @@ String apn = "";
 
 
 // MQTT details
-const char *broker = "test.mosquitto.org";
+const char *broker = "broker.emqx.io";
 const uint16_t broker_port = 8883;
 const char *client_id = "A76XX";
 
@@ -345,5 +345,11 @@ QCN:SIM7080G_P1.03_20210823
 
 -------------------------------
 
+SIM7670G  # 20261106:OK!
 
+Model: SIM7670G-MNGV
+Revision: 2397B01SIM767XM5A_M
+SIM767XM5_B01V01_260522
+
+-------------------------------
 */

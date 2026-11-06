@@ -6,7 +6,7 @@
  * @date      2023-11-28
  * @note
  * * Example is suitable for A7670X/A7608X/SIM7670G/SIM7000G/SIM7080G/SIM7600 series
- * * Connect MQTT Broker as https://test.mosquitto.org/
+ * * Connect MQTT Broker as your mqtt server
  * * Example uses a forked TinyGSM <https://github.com/lewisxhe/TinyGSM>, which will not compile successfully using the mainline TinyGSM.
  */
 #define TINY_GSM_RX_BUFFER          1024 // Set RX buffer to 1Kb
@@ -40,7 +40,7 @@ String apn = "";
 #endif
 
 // MQTT details
-const char *broker = "test.mosquitto.org";
+const char *broker = "Your mqtt server broker";
 const uint16_t broker_port = 1884;
 const char *broker_username = "rw";
 const char *broker_password = "readwrite";
