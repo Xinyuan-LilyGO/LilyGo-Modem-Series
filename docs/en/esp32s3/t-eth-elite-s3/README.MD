@@ -184,8 +184,8 @@
 
 | Power Switch | 说明        |
 | ------------ | ----------- |
-| 3.3V         | LilyGO PCIE |
-| 4.2V         | SimCom PCIE |
+| 4.2V         | LilyGO PCIE |
+| 3.3V         | SimCom PCIE |
 
 * The factory default voltage setting is 4.2V for LilyGo PCIe compatibility. If you are using a SIMCOM official PCIe adapter, you need to switch the 4.2V switch to OFF and the 3.3V switch to ON.
 
