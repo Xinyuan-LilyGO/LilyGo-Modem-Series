@@ -78,7 +78,7 @@
 
 7. Upload sketch
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 >
 > 1. Unable to upload any code? Please see the FAQ below
 > 2. When opening the Arduino IDE, you will be prompted that there are new libraries that can be updated. Please do not click update. There is no guarantee that it can be compiled, run, etc. after the update. Make sure that the board is running normally before deciding whether to update. You have to Know that problems may occur after updating due to library differences, or the default configuration (such as TinyGSM) will be overwritten.
@@ -154,6 +154,11 @@
 * PWR: This only applies to the LILYGO PCIE LET module; the official SIMCOM module does not require it.
 * **LPSET**,**SCLK**,**MOSI**,**CS**,**MISO**,The switch is only turned ON when using the SX1302 LoRaWAN module; the SX1302 and 4G LTE are mutually exclusive.
 * For ESP32 UART communication, the following pins must be connected: RX, TX, and PWR.
+
+> [!IMPORTANT]
+>
+> If you are using the **T-SIM7670G-PCIE(H797)**, you must set the **RESET** switch to the **ON** position for the modem to function.
+>
 
 #### GPS DIP switch
 
