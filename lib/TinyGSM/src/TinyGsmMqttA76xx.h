@@ -218,9 +218,10 @@ public:
             return false;
         }
         thisModem().streamSkipUntil(',');
-        int res = thisModem().stream.read();
-        if (res != '0')return false;
-        return true;
+        int res = thisModem().streamGetIntBefore('\n');
+        _isConnected = (res == 0);
+        _lastCheckConnect = millis();
+        return _isConnected;
 
     }
 
@@ -348,7 +349,7 @@ public:
         if (clientIndex > muxCount) {
             return false;
         }
-        if (millis() - _lastCheckConnect < 10000) {
+        if (_lastCheckConnect != 0 && millis() - _lastCheckConnect < 10000) {
             return _isConnected;
         }
         _lastCheckConnect = millis();
