@@ -38,17 +38,22 @@ public:
     bool mqtt_begin(bool ssl, bool sni = false)
     {
         // Clean up previous MQTT connection if any
-        thisModem().sendAT("+CMQTTDISC=0,120");
-        thisModem().waitResponse();
-        thisModem().sendAT("+CMQTTDISC=1,120");
-        thisModem().waitResponse();
-        thisModem().sendAT("+CMQTTREL=0,120");
-        thisModem().waitResponse();
-        thisModem().sendAT("+CMQTTREL=1,120");
-        thisModem().waitResponse();
+        for (uint8_t clientIndex = 0; clientIndex < TINY_GSM_MQTT_CLI_COUNT; ++clientIndex) {
+            thisModem().sendAT("+CMQTTDISC=", clientIndex, ",120");
+            if (thisModem().waitResponse(3000UL) == 1 &&
+                    thisModem().waitResponse(125000UL, "+CMQTTDISC: ") == 1) {
+                thisModem().streamGetIntBefore(',');
+                thisModem().streamGetIntBefore('\n');
+            }
+
+            thisModem().sendAT("+CMQTTREL=", clientIndex, ",120");
+            thisModem().waitResponse(3000UL);
+        }
         thisModem().sendAT("+CMQTTSTOP");
-        thisModem().waitResponse();
-        delay(20);  //Wait 20 ms
+        if (thisModem().waitResponse(3000UL) == 1 &&
+                thisModem().waitResponse(30000UL, "+CMQTTSTOP: ") == 1) {
+            thisModem().streamGetIntBefore('\n');
+        }
 
         __sni = sni;
         __ssl = ssl;
