@@ -45,6 +45,18 @@ uint32_t AutoBaud()
     return 0;
 }
 
+void powerOn()
+{
+    // Turn on the modem
+    Serial.printf("Power on modem via pin %d\n", BOARD_PWRKEY_PIN);
+    digitalWrite(BOARD_PWRKEY_PIN, LOW);
+    delay(100);
+    digitalWrite(BOARD_PWRKEY_PIN, HIGH);
+    delay(MODEM_POWERON_PULSE_WIDTH_MS);
+    digitalWrite(BOARD_PWRKEY_PIN, LOW);
+    delay(2000);
+}
+
 void setup()
 {
     Serial.begin(115200); // Set console baud rate
@@ -99,20 +111,22 @@ void setup()
     digitalWrite(MODEM_DTR_PIN, LOW);
 #endif
 
-    // Turn on the modem
-    Serial.printf("Power on modem via pin %d\n", BOARD_PWRKEY_PIN);
+    // Power key pin
     pinMode(BOARD_PWRKEY_PIN, OUTPUT);
-    digitalWrite(BOARD_PWRKEY_PIN, LOW);
-    delay(100);
-    digitalWrite(BOARD_PWRKEY_PIN, HIGH);
-    delay(MODEM_POWERON_PULSE_WIDTH_MS);
-    digitalWrite(BOARD_PWRKEY_PIN, LOW);
+
+    bool started = checkRespond();
+    if (started) {
+        Serial.println("Modem already started");
+    } else {
+        Serial.println("Modem not started, power on modem...");
+        powerOn();
+    }
 
     Serial.printf("utilities.h select model : ");
     Serial.println(PRODUCT_MODEL_NAME);
 
+    started = checkRespond();
     // Check whether it has been started
-    bool started = checkRespond();
     if (!started) {
         Serial.println("Wait modem started...");
         // Wait for the modem to finish booting
