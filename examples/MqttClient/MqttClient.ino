@@ -62,7 +62,7 @@ const char wifiSSID[] = "YourSSID";
 const char wifiPass[] = "YourWiFiPass";
 
 // MQTT details
-const char *broker = "broker.hivemq.com";
+const char *broker = "broker.emqx.io";
 
 const char *topicLed       = "GsmClientTest/led";
 const char *topicInit      = "GsmClientTest/init";
@@ -98,6 +98,9 @@ PubSubClient  mqtt(client);
 
 int ledStatus = LOW;
 uint32_t lastReconnectAttempt = 0;
+const uint8_t maxMqttConnectFailures = 3;
+uint8_t mqttConnectFailureCount = 0;
+bool mqttConnectionStopped = false;
 
 void mqttCallback(char *topic, byte *payload, unsigned int len)
 {
@@ -266,6 +269,11 @@ void setup()
 
 void loop()
 {
+    if (mqttConnectionStopped) {
+        delay(1000);
+        return;
+    }
+
     // Make sure we're still registered on the network
     if (!modem.isNetworkConnected()) {
         SerialMon.println("Network disconnected");
@@ -297,13 +305,25 @@ void loop()
     }
 
     if (!mqtt.connected()) {
-        SerialMon.println("=== MQTT NOT CONNECTED ===");
         // Reconnect every 10 seconds
         uint32_t t = millis();
         if (t - lastReconnectAttempt > 10000L) {
             lastReconnectAttempt = t;
             if (mqttConnect()) {
                 lastReconnectAttempt = 0;
+                mqttConnectFailureCount = 0;
+            } else {
+                mqttConnectFailureCount++;
+                SerialMon.print("MQTT connection failed ");
+                SerialMon.print(mqttConnectFailureCount);
+                SerialMon.print("/");
+                SerialMon.println(maxMqttConnectFailures);
+                if (mqttConnectFailureCount >= maxMqttConnectFailures) {
+                    SerialMon.print("MQTT connection failed ");
+                    SerialMon.print(maxMqttConnectFailures);
+                    SerialMon.println(" times, stopping.");
+                    mqttConnectionStopped = true;
+                }
             }
         }
         delay(100);

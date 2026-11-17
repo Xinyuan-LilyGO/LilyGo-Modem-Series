@@ -212,20 +212,13 @@ class TinyGsmSim7672 : public TinyGsmModem<TinyGsmSim7672>,
   // Checks got_data flags set by +CCHEVENT (SSL) or +CIPRXGET (TCP) URCs and
   // polls the modem for updated byte counts. Also drains any pending URCs.
   void maintainImpl() {
-    bool check_socks = false;
     for (int mux = 0; mux < TINY_GSM_MUX_COUNT; mux++) {
       GsmClientSim7672* sock = sockets[mux];
       if (sock && sock->got_data) {
-        sock->got_data = false;
-        check_socks    = true;
+        sock->got_data       = false;
+        sock->sock_available = modemGetAvailable(mux);
       }
     }
-    // modemGetAvailable dispatches per sslMode[]:
-    //   SSL  → sslAvailable()  → AT+CCHRECV? (updates both session slots at once)
-    //   TCP  → AT+CIPRXGET=4
-    // Calling for mux 0 is sufficient for SSL because sslAvailable() reads and
-    // updates both sessions (0 and 1) in a single AT+CCHRECV? response.
-    if (check_socks) { modemGetAvailable(0); }
     while (stream.available()) { waitResponse(15, NULL, NULL); }
   }
 
