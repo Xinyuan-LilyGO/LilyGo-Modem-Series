@@ -73,6 +73,15 @@ Revision: 2374B04SIM767XM5A_M
 SIM767XM5_B04V01_241010
 ```
 
+```bash
+Manufacturer: SIMCOM INCORPORATED
+Model: SIM7670G-MNGV
+Revision: 2397B01SIM767XM5A_M
+SIM767XM5_B01V01_260522
+```
+
+* [2397B01SIM767XM5A_M MQTT CONNECT BUG](https://github.com/Xinyuan-LilyGO/LilyGo-Modem-Series/issues/550#issuecomment-6871046076)
+
 ------------------------
 
 
